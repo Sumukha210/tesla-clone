@@ -1,0 +1,149 @@
+$heading: (
+  // 92px
+  "heading-1":
+    (
+      "font-size": 5.75rem,
+      "line-height": 128px,
+      "breakpoint-down-md": (
+        "font-size": 2.7rem,
+        "line-height": 64px,
+      ),
+    ),
+  // 72px
+  "heading-2":
+    (
+      "font-size": 4.5rem,
+      "line-height": 96px,
+      "breakpoint-down-md": (
+        "font-size": 2.7rem,
+        "line-height": 64px,
+      ),
+    ),
+  // 46px
+  "heading-3":
+    (
+      "font-size": 2.875rem,
+      "line-height": 64px,
+      "breakpoint-down-md": (
+        "font-size": 2.3rem,
+        "line-height": 56px,
+      ),
+    ),
+  // 32px
+  "heading-4":
+    (
+      "font-size": 2rem,
+      "line-height": 48px,
+    ),
+  // 16px
+  "heading-5":
+    (
+      "font-size": 1rem,
+      "line-height": 24px,
+    )
+);
+
+$sub-title: (
+  // 18px
+  "sub-title-1":
+    (
+      "font-size": 1.125rem,
+      "line-height": 36px,
+    ),
+  // 16px
+  "sub-title-2":
+    (
+      "font-size": 1rem,
+      "line-height": 32px,
+    ),
+  // 14px
+  "sub-title-3":
+    (
+      "font-size": 0.875rem,
+      "line-height": 24px,
+    ),
+  // 12px
+  "sub-title-4":
+    (
+      "font-size": 0.75rem,
+      "line-height": 18px,
+    )
+);
+
+$caption: (
+  // 16px
+  "caption-1":
+    (
+      "font-size": 1rem,
+      "line-height": 32px,
+      "letter-spacing": 0.32rem,
+    ),
+  // 14px
+  "caption-2":
+    (
+      "font-size": 0.875rem,
+      "line-height": 24px,
+      "letter-spacing": 0.3rem,
+    ),
+  // 12px
+  "caption-3":
+    (
+      "font-size": 0.75rem,
+      "line-height": 18px,
+      "letter-spacing": 0.3rem,
+    )
+);
+
+@mixin getTypoClasses($array, $isHeading: false, $isCaption: false) {
+  @each $key, $value in $array {
+    .#{$key} {
+      font-size: map-get($value, "font-size");
+      line-height: map-get($value, "line-height");
+      font-style: normal;
+
+      //  only to heading class
+      @if $isHeading {
+        font-family: var(--secondary-font);
+
+        @media (max-width: 767.98px) {
+          @if map-get($value, "breakpoint-down-md") {
+            font-size: map-get(
+              map-get($value, "breakpoint-down-md"),
+              "font-size"
+            );
+            line-height: map-get(
+              map-get($value, "breakpoint-down-md"),
+              "line-height"
+            );
+          }
+        }
+
+        &:not(&.bold) {
+          font-weight: 500;
+        }
+
+        &.bold {
+          font-weight: 600;
+        }
+      }
+
+      // only to caption class
+      @if $isCaption {
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: map-get($value, "letter-spacing");
+      }
+    }
+  }
+}
+
+@include getTypoClasses($heading, true);
+@include getTypoClasses($sub-title);
+@include getTypoClasses($caption, $isCaption: true);
+
+/**
+ font-size: map-get(
+    map-get(map-get($heading, "heading-4"), "breakpoint-down"),
+    "font-size"
+  );
+*/
