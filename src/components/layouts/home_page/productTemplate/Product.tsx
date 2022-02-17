@@ -4,8 +4,11 @@ import NextImg from "next/image";
 import ProductSubtitle from "./ProductSubtitle";
 import { ProductWrapper, Content } from "./productStyles";
 import Button from "@/element/button";
+import { useRouter } from "next/router";
 
 const Product: React.FC<generalInfoType> = ({ name, id, productType, img }) => {
+  const router = useRouter();
+
   const primaryBtnName =
     productType === "car"
       ? "custom order"
@@ -34,7 +37,10 @@ const Product: React.FC<generalInfoType> = ({ name, id, productType, img }) => {
               </div>
 
               <div className="btnContainer">
-                <Button name={primaryBtnName} />
+                <Button
+                  name={primaryBtnName}
+                  onClick={() => router.push(`/${id}/design`)}
+                />
                 {productType != "accessories" && (
                   <Button name={secondaryBtnName} secondaryBtn={true} />
                 )}
