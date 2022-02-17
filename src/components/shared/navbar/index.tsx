@@ -1,16 +1,21 @@
+import React from "react";
 import { products } from "@/utils/productDetails";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/router";
 import Logo from "./Logo";
 import { Nav, NavContainer } from "./styles";
 
 const Navbar = () => {
+  const router = useRouter();
+
   return (
     <Nav>
       <div className="container">
         <NavContainer className="flex justify-between">
           <div className="firstPart">
-            <Logo />
+            <span onClick={() => router.push("/")}>
+              <Logo />
+            </span>
           </div>
 
           <div className="secondPart">

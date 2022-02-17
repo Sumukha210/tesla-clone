@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ProductWrapper = styled.div`
+export const Wrapper = styled.div`
   height: 100vh;
   width: 100%;
 
@@ -39,24 +39,22 @@ export const Content = styled.div`
     .flex {
       min-height: 100%;
       flex-direction: column;
-
-      h1 {
-        color: var(--dark-200);
-      }
-
-      h3 {
-        font-weight: 400;
-        color: rgb(23, 26, 32);
-        a {
-          color: rgb(23, 26, 32);
-        }
-      }
-    }
-  }
-
-  button {
-    &:last-child {
-      margin-left: 24px;
     }
   }
 `;
+
+export const TopSection = styled.div`
+  h1 {
+    color: var(--dark-200);
+  }
+
+  h3 {
+    font-weight: 400;
+    color: rgb(23, 26, 32);
+    a {
+      color: rgb(23, 26, 32);
+    }
+  }
+`;
+
+export const BottomSection = styled.div``;

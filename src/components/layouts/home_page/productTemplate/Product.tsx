@@ -1,10 +1,10 @@
 import React from "react";
 import { generalInfoType } from "@/utils/productDetails/types";
-import NextImg from "next/image";
 import ProductSubtitle from "./ProductSubtitle";
-import { ProductWrapper, Content } from "./productStyles";
 import Button from "@/element/button";
 import { useRouter } from "next/router";
+import HeroTemplate from "@/module/hero";
+import styled from "styled-components";
 
 const Product: React.FC<generalInfoType> = ({ name, id, productType, img }) => {
   const router = useRouter();
@@ -20,37 +20,31 @@ const Product: React.FC<generalInfoType> = ({ name, id, productType, img }) => {
     productType === "car" ? "Existing Inventory" : "Learn more";
 
   return (
-    <ProductWrapper>
-      <div className="bgImg">
-        <NextImg src={img} placeholder="blur" objectFit="cover" />
-      </div>
-
-      <Content>
-        <div className="container">
-          <div className="inner-content">
-            <div className="flex justify-between">
-              <div className="header">
-                <h1 className="heading-1">{name}</h1>
-                <h3 className="subtitle-2">
-                  <ProductSubtitle productType={productType} />
-                </h3>
-              </div>
-
-              <div className="btnContainer">
-                <Button
-                  name={primaryBtnName}
-                  onClick={() => router.push(`/${id}/design`)}
-                />
-                {productType != "accessories" && (
-                  <Button name={secondaryBtnName} secondaryBtn={true} />
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </Content>
-    </ProductWrapper>
+    <>
+      <HeroTemplate
+        name={name}
+        subtitle={<ProductSubtitle productType={productType} />}
+        img={img}>
+        <BtnContainer>
+          <Button
+            name={primaryBtnName}
+            onClick={() => router.push(`/${id}/design`)}
+          />
+          {productType != "accessories" && (
+            <Button name={secondaryBtnName} secondaryBtn={true} />
+          )}
+        </BtnContainer>
+      </HeroTemplate>
+    </>
   );
 };
 
 export default Product;
+
+const BtnContainer = styled.div`
+  button {
+    &:last-child {
+      margin-left: 24px;
+    }
+  }
+`;
