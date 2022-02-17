@@ -34,6 +34,7 @@ export const Content = styled.div`
 
   .inner-content {
     text-align: center;
+    padding: 7rem 0;
 
     .flex {
       min-height: 100%;

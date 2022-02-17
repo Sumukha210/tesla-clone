@@ -27,7 +27,7 @@ const Product: React.FC<generalInfoType> = ({ name, id, productType, img }) => {
 
       <Content>
         <div className="container">
-          <div className="inner-content component-inner-gap">
+          <div className="inner-content">
             <div className="flex justify-between">
               <div className="header">
                 <h1 className="heading-1">{name}</h1>
