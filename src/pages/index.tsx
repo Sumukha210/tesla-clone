@@ -1,7 +1,12 @@
 import React from "react";
+import ProductTemplate from "@/layout/home_page/productTemplate";
 
 const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <>
+      <ProductTemplate />
+    </>
+  );
 };
 
 export default HomePage;

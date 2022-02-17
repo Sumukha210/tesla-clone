@@ -1,0 +1,14 @@
+$justifyProperties: (
+  "justify-between": "space-between",
+  "justify-center": "center",
+);
+
+.flex {
+  display: flex;
+
+  @each $key, $value in $justifyProperties {
+    &.#{$key} {
+      justify-content: #{$value};
+    }
+  }
+}

@@ -4,6 +4,7 @@
 @import "../utils/breakpoints";
 @import "../utils/typography";
 @import "../utils/container";
+@import "./flex";
 
 * {
   margin: 0;
@@ -19,7 +20,6 @@ body {
 
 body {
   font-family: var(--primary-font);
-  background-color: var(--light-color);
 }
 
 .ml-auto {
