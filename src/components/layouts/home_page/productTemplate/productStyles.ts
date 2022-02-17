@@ -27,7 +27,7 @@ export const Content = styled.div`
   width: 100%;
   height: 100%;
 
-  .custom-container,
+  .container,
   .inner-content {
     height: 100%;
   }

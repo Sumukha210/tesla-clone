@@ -1,4 +1,4 @@
-import model3Img from "@/assets/images/home-page/model-s.jpg";
+import model3Img from "@/assets/images/home-page/model-3.jpg";
 import modelSImg from "@/assets/images/home-page/model-s.jpg";
 import modelXImg from "@/assets/images/home-page/model-x.jpg";
 import modelYImg from "@/assets/images/home-page/model-y.jpg";

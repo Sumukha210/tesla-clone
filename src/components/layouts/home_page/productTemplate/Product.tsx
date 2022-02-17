@@ -23,7 +23,7 @@ const Product: React.FC<generalInfoType> = ({ name, id, productType, img }) => {
       </div>
 
       <Content>
-        <div className="custom-container">
+        <div className="container">
           <div className="inner-content component-inner-gap">
             <div className="flex justify-between">
               <div className="header">
