@@ -1,6 +1,6 @@
 import modelSImg from "@/assets/images/home-page/model-s.jpg";
 import { productsTypes } from "./types";
-import spec1img from "@/assets/images/models-page/spec/MS-Interior-Grid-D-Desktop.jpg";
+import spec1img from "@/assets/images/models-page/spec/MS-Interior-Grid-A-Desktop.jpg";
 import spec3img from "@/assets/images/models-page/spec/interior.jpg";
 
 export const modelSDetails: productsTypes = {

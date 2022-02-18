@@ -43,9 +43,16 @@ export const NavContainer = styled.div`
     }
   }
 
+  .secondPart {
+    @media (max-width: 1199.98px) {
+      display: none;
+    }
+  }
+
   .thirdPart {
     .menu {
       margin-left: 8px;
+      cursor: pointer;
     }
   }
 `;
