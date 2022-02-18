@@ -1,26 +1,28 @@
 import styled from "styled-components";
+import { contentProps } from ".";
 
 export const Wrapper = styled.div`
   height: 100vh;
   width: 100%;
 
   position: relative;
-  .bgImg {
-    height: 100%;
-    width: 100%;
+`;
 
-    & > span {
+export const BgImg = styled.figure`
+  height: 100%;
+  width: 100%;
+
+  & > span {
+    height: 100% !important;
+    width: 100% !important;
+    img {
       height: 100% !important;
       width: 100% !important;
-      img {
-        height: 100% !important;
-        width: 100% !important;
-      }
     }
   }
 `;
 
-export const Content = styled.div`
+export const Content = styled.div<contentProps>`
   position: absolute;
   top: 0%;
   left: 0%;
@@ -34,7 +36,7 @@ export const Content = styled.div`
 
   .inner-content {
     text-align: center;
-    padding: 7rem 0;
+    padding: ${({ isHeroPage }) => (isHeroPage ? "6rem 0" : "6rem 0 3rem 0")};
 
     .flex {
       min-height: 100%;
@@ -57,4 +59,6 @@ export const TopSection = styled.div`
   }
 `;
 
-export const BottomSection = styled.div``;
+export const BottomSection = styled.div`
+  /* position: relative; */
+`;

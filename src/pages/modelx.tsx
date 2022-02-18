@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "@/shared/Layout";
-import Hero from "@/layout/modelXPage/hero";
+import Hero from "@/layout/modelXPage/Hero";
 
 const ModelXPage = () => {
   return (

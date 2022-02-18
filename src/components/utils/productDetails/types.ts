@@ -11,6 +11,7 @@ export interface productsTypes {
   generalInfo: generalInfoType;
   modelVersion?: modelVersionTypes;
   specifications?: specificationsTypes[];
+  allNewInterior?: allNewInteriorTypes;
 }
 
 export interface specificationsTypes {
@@ -27,4 +28,23 @@ export interface modelVersionTypes {
     name: string;
     specifications: specificationsTypes[];
   };
+}
+
+export interface interiorCarouselTypes {
+  title: string;
+  subtitle: string;
+  mediaType: "img" | "video";
+  media: StaticImageData | string;
+}
+
+export interface interiorSpecsTypes {
+  title: string;
+  subtitle: string;
+  img: StaticImageData | string | undefined;
+  mediaType: "img" | "video";
+}
+
+export interface allNewInteriorTypes {
+  carousel: interiorCarouselTypes[];
+  specs: interiorSpecsTypes[];
 }

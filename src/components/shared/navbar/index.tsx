@@ -22,7 +22,7 @@ const Navbar = () => {
             {products.map(
               ({ generalInfo: { name, id, productType } }) =>
                 productType != "accessories" && (
-                  <span key={id} className="subtitle-2">
+                  <span key={id} className="subtitle-1">
                     <Link href={id}>{name}</Link>
                   </span>
                 )
@@ -30,13 +30,13 @@ const Navbar = () => {
           </div>
 
           <div className="thirdPart">
-            <span className="subtitle-2">
+            <span className="subtitle-1">
               <Link href="/shop">Shop</Link>
             </span>
-            <span className="subtitle-2">
+            <span className="subtitle-1">
               <Link href="/account">Account</Link>
             </span>
-            <span className="subtitle-2 menu">
+            <span className="subtitle-1 menu">
               <span>Menu</span>
             </span>
           </div>

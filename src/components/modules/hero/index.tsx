@@ -1,11 +1,16 @@
 import React, { ReactNode } from "react";
-import { BottomSection, Content, TopSection, Wrapper } from "./styles";
+import { BgImg, BottomSection, Content, TopSection, Wrapper } from "./styles";
 import NextImg from "next/image";
+import { useRouter } from "next/router";
 
 interface HeroTemplateProps {
   img: StaticImageData;
   name: string;
   subtitle?: string | ReactNode;
+}
+
+export interface contentProps {
+  isHeroPage: boolean;
 }
 
 const HeroTemplate: React.FC<HeroTemplateProps> = ({
@@ -14,14 +19,16 @@ const HeroTemplate: React.FC<HeroTemplateProps> = ({
   subtitle,
   children,
 }) => {
+  const router = useRouter();
+
   return (
     <>
       <Wrapper>
-        <div className="bgImg">
+        <BgImg>
           <NextImg src={img} placeholder="blur" objectFit="cover" />
-        </div>
+        </BgImg>
 
-        <Content>
+        <Content isHeroPage={router.pathname === "/"}>
           <div className="container">
             <div className="inner-content">
               <div className="flex justify-between">
