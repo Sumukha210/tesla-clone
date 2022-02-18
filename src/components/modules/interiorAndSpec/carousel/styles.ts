@@ -82,7 +82,7 @@ export const ContentContainer = styled.div`
     h5 {
       color: #e2e3e3;
       font-weight: 500;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
   }
 `;

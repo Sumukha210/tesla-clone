@@ -40,7 +40,7 @@ export interface interiorCarouselTypes {
 export interface interiorSpecsTypes {
   title: string;
   subtitle: string;
-  img: StaticImageData | string | undefined;
+  img: StaticImageData | string;
   mediaType: "img" | "video";
 }
 

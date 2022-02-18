@@ -5,6 +5,7 @@ import interiorImg from "@/assets/images/models-page/spec/interior.jpg";
 import NextImg from "next/image";
 import { BgImg } from "../hero/styles";
 import Carousel from "./carousel";
+import Specs from "./specification";
 
 interface interiorSpecProps extends allNewInteriorTypes {
   title: string;
@@ -28,6 +29,7 @@ const InteriorAndSpec: React.FC<interiorSpecProps> = ({
       </FullHeightImg>
 
       <Carousel carousel={carousel} />
+      <Specs specs={specs} />
     </Wrapper>
   );
 };

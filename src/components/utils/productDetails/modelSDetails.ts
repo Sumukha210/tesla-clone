@@ -110,7 +110,7 @@ export const modelSDetails: productsTypes = {
         subtitle:
           "A 22-speaker, 960-watt audio system with Active Road Noise Reduction offers immersive listening and studio-grade sound quality.",
         mediaType: "video",
-        img: "spec2.webm",
+        img: "/videos/interiorCarousel/spec2.webm",
       },
       {
         title: "Room for Everything",
