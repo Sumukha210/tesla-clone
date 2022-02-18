@@ -9,4 +9,22 @@ export interface generalInfoType {
 
 export interface productsTypes {
   generalInfo: generalInfoType;
+  modelVersion?: modelVersionTypes;
+  specifications?: specificationsTypes[];
+}
+
+export interface specificationsTypes {
+  specName: string;
+  specValue: string;
+}
+
+export interface modelVersionTypes {
+  version1: {
+    name: string;
+    specifications: specificationsTypes[];
+  };
+  version2: {
+    name: string;
+    specifications: specificationsTypes[];
+  };
 }
