@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "@/shared/Layout";
-import Hero from "@/layout/modelsPage/Hero";
+import Hero from "@/layout/modelS_page/Hero";
 import InteriorAndSpec from "@/module/interiorAndSpec";
 import { products } from "@/utils/productDetails";
 

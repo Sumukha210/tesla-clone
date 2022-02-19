@@ -11,9 +11,12 @@ const Hero = () => {
   return (
     <HeroTemplate img={heroImg} name="Model S" subtitle="Plaid">
       <Specifications
+        id={products[0].generalInfo.id}
         specifications={[
-          ...specifications?.slice(0, 1),
-          ...specifications.slice(2, 6),
+          specifications[0],
+          specifications[2],
+          specifications[specifications.length - 1],
+          specifications[specifications.length - 2],
         ]}
       />
     </HeroTemplate>

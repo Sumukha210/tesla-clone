@@ -11,6 +11,7 @@ const Hero = () => {
   return (
     <HeroTemplate img={heroImg} name="Model X" subtitle="Plaid">
       <Specifications
+        id={products[1].generalInfo.id}
         specifications={[
           ...specifications?.slice(0, 3),
           ...specifications.slice(4, 6),
