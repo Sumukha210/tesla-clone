@@ -9,9 +9,11 @@ const Button: React.FC<buttonProps> = ({
   secondaryBtn = false,
   lightOutlineBtn = false,
   outlineBtn = false,
+  smBtn = false,
 }) => {
   return (
     <CustomBtn
+      smBtn={smBtn}
       lightOutlineBtn={lightOutlineBtn}
       outlineBtn={outlineBtn}
       secondaryBtn={secondaryBtn}
@@ -25,12 +27,18 @@ const Button: React.FC<buttonProps> = ({
 export default Button;
 
 const CustomBtn = styled.button<customBtnProps>`
-  padding: 13px 85px;
+  padding: ${({ smBtn }) => (smBtn ? "13px 55px" : "13px 85px")};
   font-size: 12px;
-  background: ${({ secondaryBtn }) =>
-    secondaryBtn ? "rgba(244, 244, 244, 0.65)" : "rgba(23, 26, 32, 0.8)"};
+  background: ${({ secondaryBtn, outlineBtn }) =>
+    outlineBtn
+      ? "transparent"
+      : secondaryBtn
+      ? "rgba(244, 244, 244, 0.65)"
+      : "rgba(23, 26, 32, 0.8)"};
   border-radius: 35px;
-  color: var(${props => (props.secondaryBtn ? "--dark-300" : "--light-color")});
+  color: var(
+    ${({ secondaryBtn }) => (secondaryBtn ? "--dark-300" : "--light-color")}
+  );
   font-family: var(--primary-font);
   text-transform: uppercase;
   font-weight: 600;
