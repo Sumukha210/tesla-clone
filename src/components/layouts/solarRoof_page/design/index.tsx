@@ -18,7 +18,7 @@ const Design = () => {
       <div className="container">
         <Content>
           <div className="left">
-            <p className="subtitle-1">{caption}</p>
+            <p className="caption-text">{caption}</p>
             <h2 className="heading-2">{title}</h2>
             <Button
               name="order now"
@@ -30,7 +30,7 @@ const Design = () => {
           </div>
 
           <div className="right">
-            <p>{description}</p>
+            <p className="subtitle-1">{description}</p>
           </div>
         </Content>
       </div>

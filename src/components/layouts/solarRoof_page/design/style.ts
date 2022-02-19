@@ -14,13 +14,6 @@ export const Content = styled.div`
     margin: auto;
   }
 
-  .left {
-    p {
-      color: rgb(23, 26, 32);
-      font-weight: 300;
-    }
-  }
-
   .right {
     p {
       color: rgb(57, 60, 65);
