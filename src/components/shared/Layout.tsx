@@ -1,10 +1,11 @@
 import React from "react";
 import Navbar from "./navbar";
+import { layoutProps } from "./types";
 
-const Layout: React.FC = ({ children }) => {
+const Layout: React.FC<layoutProps> = ({ children, lightColorNav }) => {
   return (
     <>
-      <Navbar />
+      <Navbar lightColorNav={lightColorNav} />
       {children}
     </>
   );

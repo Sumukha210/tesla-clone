@@ -7,9 +7,16 @@ const Button: React.FC<buttonProps> = ({
   onClick = () => {},
   btnType = "button",
   secondaryBtn = false,
+  lightOutlineBtn = false,
+  outlineBtn = false,
 }) => {
   return (
-    <CustomBtn secondaryBtn={secondaryBtn} type={btnType} onClick={onClick}>
+    <CustomBtn
+      lightOutlineBtn={lightOutlineBtn}
+      outlineBtn={outlineBtn}
+      secondaryBtn={secondaryBtn}
+      type={btnType}
+      onClick={onClick}>
       <span>{name}</span>
     </CustomBtn>
   );
@@ -28,7 +35,8 @@ const CustomBtn = styled.button<customBtnProps>`
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
-  outline: none;
+  outline: ${({ outlineBtn, lightOutlineBtn }) =>
+    outlineBtn ? `2px solid ${lightOutlineBtn ? "white" : "black"}` : "none"};
   border: none;
   backdrop-filter: blur(8px);
   cursor: pointer;

@@ -1,5 +1,7 @@
 export interface customBtnProps {
   secondaryBtn?: boolean;
+  lightOutlineBtn?: boolean;
+  outlineBtn?: boolean;
 }
 
 export interface buttonProps extends customBtnProps {

@@ -5,8 +5,9 @@ import { useRouter } from "next/router";
 import Logo from "./Logo";
 import { Nav, NavContainer } from "./styles";
 import Sidebar from "@/module/sidebar";
+import { layoutProps } from "../types";
 
-const Navbar = () => {
+const Navbar: React.FC<layoutProps> = ({ lightColorNav = false, fixedNav }) => {
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -20,7 +21,9 @@ const Navbar = () => {
 
       <Nav>
         <div className="container">
-          <NavContainer className="flex justify-between">
+          <NavContainer
+            className="flex justify-between"
+            lightColorNav={lightColorNav}>
             <div className="firstPart">
               <span onClick={() => router.push("/")}>
                 <Logo />

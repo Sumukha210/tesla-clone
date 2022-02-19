@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { layoutProps } from "../types";
 
 export const Nav = styled.nav`
   position: absolute;
@@ -8,7 +9,7 @@ export const Nav = styled.nav`
   z-index: 999;
 `;
 
-export const NavContainer = styled.div`
+export const NavContainer = styled.div<layoutProps>`
   align-items: center;
   padding: 10px 0;
 
@@ -16,6 +17,8 @@ export const NavContainer = styled.div`
     svg {
       height: 24px;
       width: 120px;
+      cursor: pointer;
+      color: ${({ lightColorNav }) => (lightColorNav ? "white" : "black")};
     }
   }
 
@@ -28,7 +31,10 @@ export const NavContainer = styled.div`
 
       a {
         padding: 6px 12px;
-        color: var(--dark-100);
+        color: var(
+          ${({ lightColorNav }) =>
+            lightColorNav ? "--light-color" : "--dark-100"}
+        );
         text-decoration: none;
         font-weight: 500;
         backdrop-filter: blur(16px);

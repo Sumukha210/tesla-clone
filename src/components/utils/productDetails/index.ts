@@ -1,10 +1,10 @@
 import modelYImg from "@/assets/images/home-page/model-y.jpg";
 import solarPanelsImg from "@/assets/images/home-page/solar-panels.jpg";
-import solarRoofImg from "@/assets/images/home-page/solar-roof.jpg";
 import accessoryImg from "@/assets/images/home-page/Accessories.jpg";
 import { productsTypes } from "./types";
 import { modelSDetails } from "./modelSDetails";
 import { modelXDetails } from "./modelXDetails";
+import { solarRoofDetails } from "./solarRoofDetails";
 
 export const products: productsTypes[] = [
   modelSDetails,
@@ -25,14 +25,7 @@ export const products: productsTypes[] = [
       img: solarPanelsImg,
     },
   },
-  {
-    generalInfo: {
-      id: "solarroof",
-      name: "Solar Roof",
-      productType: "solar roof",
-      img: solarRoofImg,
-    },
-  },
+  solarRoofDetails,
   {
     generalInfo: {
       id: "shop",
