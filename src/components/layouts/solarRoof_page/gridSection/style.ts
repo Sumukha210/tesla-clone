@@ -27,8 +27,8 @@ export const Content = styled.div<gridContentProps>`
     order: ${({ imgFirst }) => (imgFirst ? "2" : "initial")};
 
     .description {
-      color: rgb(57, 60, 65);
       font-weight: 400;
+      color: rgba(23, 26, 32, 0.9);
     }
 
     .title {
