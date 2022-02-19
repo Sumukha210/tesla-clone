@@ -8,7 +8,7 @@ export const ImgContainer = styled(BgImg)`
 `;
 
 export const Content = styled.div`
-  padding: 3rem 0;
+  padding: 3.5rem 0;
   @media (min-width: 1200px) {
     width: 80%;
     margin: auto;
