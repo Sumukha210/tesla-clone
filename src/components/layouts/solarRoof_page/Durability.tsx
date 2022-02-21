@@ -4,9 +4,12 @@ import dynamic from "next/dynamic";
 import React, { useRef } from "react";
 import { featureType } from "./types";
 
-const DynamicGridSection = dynamic(() => import("./gridSection"), {
-  loading: () => <LoadingSpinner />,
-});
+const DynamicGridSection = dynamic(
+  () => import("../../modules/sections/sectionLayout_2"),
+  {
+    loading: () => <LoadingSpinner />,
+  }
+);
 
 const Durability = () => {
   const wrapperRef = useRef(null);

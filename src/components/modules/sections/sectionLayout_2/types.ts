@@ -1,4 +1,4 @@
-import { featureType } from "../types";
+import { featureType } from "../../../layouts/solarRoof_page/types";
 
 export interface gridContentProps {
   imgFirst?: boolean;

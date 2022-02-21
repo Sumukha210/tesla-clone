@@ -1,12 +1,23 @@
 import React from "react";
 import NextImg from "next/image";
-import { designData } from "./util";
 import Button from "@/element/button";
 import { useRouter } from "next/router";
 import { ImgContainer, Content, Wrapper } from "./style";
+import { featureType } from "@/layout/solarRoof_page/types";
 
-const Design = () => {
-  const { img, title, caption, description } = designData;
+interface SectionLayout1Props extends featureType {
+  btn1Text?: string;
+  btn1Path: string;
+}
+
+const SectionLayout1: React.FC<SectionLayout1Props> = ({
+  img,
+  caption,
+  title,
+  description,
+  btn1Path,
+  btn1Text = "order now",
+}) => {
   const router = useRouter();
 
   return (
@@ -21,11 +32,11 @@ const Design = () => {
             <p className="caption-text">{caption}</p>
             <h2 className="heading-2">{title}</h2>
             <Button
-              name="order now"
+              name={btn1Text}
               outlineBtn
               secondaryBtn
               smBtn
-              onClick={() => router.push(`/solarroof/design`)}
+              onClick={() => router.push(`${btn1Path}`)}
             />
           </div>
 
@@ -38,4 +49,4 @@ const Design = () => {
   );
 };
 
-export default Design;
+export default SectionLayout1;

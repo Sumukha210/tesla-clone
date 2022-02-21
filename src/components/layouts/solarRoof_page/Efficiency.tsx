@@ -1,5 +1,5 @@
 import React from "react";
-import GridSection from "./gridSection";
+import GridSection from "../../modules/sections/sectionLayout_2";
 import { featureType } from "./types";
 import img from "@/assets/images/solarRoof-page/efficiency.jpg";
 import styled from "styled-components";

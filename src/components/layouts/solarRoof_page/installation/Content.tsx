@@ -2,7 +2,7 @@ import Button from "@/element/button";
 import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
-import { Content } from "../design/style";
+import { Content } from "@/module/sections/sectionLayout_1/style";
 
 const ContentSection = () => {
   const router = useRouter();
