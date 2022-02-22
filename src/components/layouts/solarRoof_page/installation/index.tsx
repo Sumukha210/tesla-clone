@@ -6,10 +6,9 @@ import { Wrapper } from "./style";
 const Installation = () => {
   return (
     <Wrapper>
-      <div className="container">
-        <ContentSection />
-        <CarouselSection />
-      </div>
+      <ContentSection />
+
+      <CarouselSection />
     </Wrapper>
   );
 };

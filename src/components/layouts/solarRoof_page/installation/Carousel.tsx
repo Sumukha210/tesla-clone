@@ -7,40 +7,50 @@ const CarouselSection = () => {
   let currentItem = carouselOptions[currentEleNum];
 
   return (
-    <Wrapper>
-      <VideoContainer>
-        <video src={currentItem.videoSrc} autoPlay loop muted />
-      </VideoContainer>
+    <CarouselContainer className="container">
+      <Wrapper>
+        <VideoContainer>
+          <video src={currentItem.videoSrc} autoPlay loop muted />
+        </VideoContainer>
 
-      <BoxContainer>
-        {carouselOptions.map(({ title, description }, index) => (
-          <Box
-            key={index}
-            className={`${currentEleNum === index && "active"}`}
-            onClick={() => setCurrentNum(index)}>
-            <h2 className="subtitle-1">{title}</h2>
-            <p className="subtitle-3">{description}</p>
-          </Box>
-        ))}
-      </BoxContainer>
-    </Wrapper>
+        <BoxContainer>
+          {carouselOptions.map(({ title, description }, index) => (
+            <Box
+              key={index}
+              className={`${currentEleNum === index && "active"}`}
+              onClick={() => setCurrentNum(index)}>
+              <h2 className="subtitle-1">{title}</h2>
+              <p className="subtitle-3">{description}</p>
+            </Box>
+          ))}
+        </BoxContainer>
+      </Wrapper>
+    </CarouselContainer>
   );
 };
 
 export default CarouselSection;
 
+export const CarouselContainer = styled.div`
+  @media (max-width: 575.98px) {
+    padding: 0;
+  }
+`;
+
 const Wrapper = styled.div`
-  /* @media (min-width: 1024px) {
-    width: 80%;
-} */
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(60%, 0.7fr));
   justify-content: center;
   margin: auto;
+
+  @media (min-width: 576px) {
+    grid-template-columns: repeat(auto-fill, minmax(60%, 0.7fr));
+  }
 `;
 
 const VideoContainer = styled.div`
-  padding: 0 4rem;
+  @media (min-width: 576px) {
+    padding: 0 4rem;
+  }
 
   video {
     height: 420px;
@@ -52,19 +62,29 @@ const VideoContainer = styled.div`
 const BoxContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
   margin-top: 2rem;
+  grid-gap: 1.3rem;
+
+  @media (min-width: 576px) {
+    grid-gap: 2rem;
+  }
 `;
 
 const Box = styled.div`
-  padding: 2rem;
+  padding: 19px;
+
+  @media (min-width: 576px) {
+    padding: 2rem;
+  }
 
   &:not(.active) {
     border-top: 3px solid var(--dark-100);
+    opacity: 0.5;
   }
 
   &.active {
     outline: 3px solid var(--dark-100);
+    opacity: 1;
   }
 
   p {

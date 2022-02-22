@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "@/shared/Layout";
-import Hero from "@/layout/solarRoof_page/Hero";
+import Hero from "@/layout/solarRoof_page/hero";
 import Design from "@/layout/solarRoof_page/Design";
 import EnergyStorage from "@/layout/solarRoof_page/EnergyStorage";
 import Durability from "@/layout/solarRoof_page/Durability";

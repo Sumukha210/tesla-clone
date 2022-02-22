@@ -48,4 +48,8 @@ const CustomBtn = styled.button<customBtnProps>`
   border: none;
   backdrop-filter: blur(8px);
   cursor: pointer;
+
+  @media (max-width: 575.98px) {
+    width: 100%;
+  }
 `;

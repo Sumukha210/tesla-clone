@@ -21,4 +21,8 @@ const ValueForMoney = () => {
 
 export default ValueForMoney;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  @media (max-width: 575.98px) {
+    margin: 0px;
+  }
+`;

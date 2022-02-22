@@ -12,15 +12,20 @@
     margin-right: auto;
   }
 
-  @include custom-breakpoint(sm, md) {
-    max-width: 540px;
+  @include custom-breakpoint(md, lg) {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
-  @include custom-breakpoint(md, lg) {
-    max-width: 100%;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
+  // @include custom-breakpoint(sm, md) {
+  //   max-width: 540px;
+  // }
+
+  // @include custom-breakpoint(md, lg) {
+  //   max-width: 720px;
+  //   padding-left: 1rem;
+  //   padding-right: 1rem;
+  // }
 
   @include custom-breakpoint(lg, xl) {
     max-width: 960px;
