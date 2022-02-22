@@ -1,4 +1,4 @@
-import { BgImg } from "@/module/hero/styles";
+import { BgImg } from "@/module/heroTemplate/styles";
 import styled from "styled-components";
 import { btnContainerProps, gridContentProps } from "./types";
 

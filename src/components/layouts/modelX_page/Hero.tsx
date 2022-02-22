@@ -1,8 +1,8 @@
 import React from "react";
 import heroImg from "@/assets/images/modelx-page/MX-Hero-Desktop.jpg";
-import HeroTemplate from "@/module/hero";
+import HeroTemplate from "@/module/heroTemplate";
 import { products } from "@/utils/productDetails";
-import Specifications from "@/module/hero/Specifications";
+import Specifications from "@/module/heroTemplate/Specifications";
 
 const Hero = () => {
   const specifications =

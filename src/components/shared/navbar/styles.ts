@@ -56,9 +56,21 @@ export const NavContainer = styled.div<layoutProps>`
   }
 
   .thirdPart {
+    @media (max-width: 575.98px) {
+      span {
+        &:not(:last-child) {
+          display: none;
+        }
+      }
+    }
+
     .menu {
       margin-left: 8px;
       cursor: pointer;
+      color: var(
+        ${({ lightColorNav }) =>
+          lightColorNav ? "--light-color" : "--dark-100"}
+      );
     }
   }
 `;

@@ -3,7 +3,7 @@ import { allNewInteriorTypes } from "@/utils/productDetails/types";
 import styled from "styled-components";
 import interiorImg from "@/assets/images/models-page/spec/interior.jpg";
 import NextImg from "next/image";
-import { BgImg } from "../hero/styles";
+import { BgImg } from "../heroTemplate/styles";
 import Carousel from "./carousel";
 import Specs from "./specification";
 

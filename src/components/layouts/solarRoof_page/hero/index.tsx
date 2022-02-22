@@ -1,5 +1,5 @@
 import React from "react";
-import HeroTemplate from "@/module/hero";
+import HeroTemplate from "@/module/heroTemplate";
 import heroImg from "@/assets/images/solarRoof-page/hero.png";
 import { FaSolarPanel } from "react-icons/fa";
 import Button from "@/element/button";
