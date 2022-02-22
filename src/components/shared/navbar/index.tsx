@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { products } from "@/utils/productDetails";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -10,14 +10,36 @@ import { layoutProps } from "../types";
 const Navbar: React.FC<layoutProps> = ({ lightColorNav = false, fixedNav }) => {
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showProductsNamesOnSidebar, setShowProductsNamesOnSidebar] =
+    useState(false);
 
   const handleCloseMenu = () => {
     setSidebarOpen(false);
   };
 
+  useEffect(() => {
+    if (window.innerWidth < 1199.98) {
+      setShowProductsNamesOnSidebar(true);
+    } else {
+      setShowProductsNamesOnSidebar(false);
+    }
+
+    if (sidebarOpen) {
+      document.body.style.overflowY = "hidden";
+      document.body.style.maxHeight = "100vh";
+    } else {
+      document.body.style.overflowY = "initial";
+      document.body.style.maxHeight = "initial";
+    }
+  }, [sidebarOpen]);
+
   return (
     <>
-      <Sidebar isSidebarOpen={sidebarOpen} handleCloseMenu={handleCloseMenu} />
+      <Sidebar
+        showProductsNamesOnSidebar={showProductsNamesOnSidebar}
+        isSidebarOpen={sidebarOpen}
+        handleCloseMenu={handleCloseMenu}
+      />
 
       <Nav>
         <div className="container">

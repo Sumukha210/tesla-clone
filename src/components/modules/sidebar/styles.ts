@@ -21,8 +21,10 @@ export const Wrapper = styled.div`
 `;
 
 export const CloseIcon = styled.div`
+  position: absolute;
+  right: 20px;
+  top: 20px;
   text-align: end;
-  margin: 1.5rem 3rem 0 0;
 
   svg {
     backdrop-filter: blur(16px);
@@ -75,4 +77,10 @@ export const SideNav = styled.div`
       }
     }
   }
+`;
+
+export const SideNavContent = styled.div`
+  overflow-y: auto;
+  height: 100vh;
+  padding-top: 2rem;
 `;
