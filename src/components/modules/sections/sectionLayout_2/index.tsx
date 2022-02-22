@@ -11,6 +11,7 @@ const GridSection: React.FC<gridSectionProps> = ({
   secondBtnText = null,
   secondBtnPath = null,
   imgFirst = false,
+  orderNowBtnText = "order now",
 }) => {
   const { img, title, caption, description } = data;
   const router = useRouter();
@@ -32,7 +33,7 @@ const GridSection: React.FC<gridSectionProps> = ({
               outlineBtn
               smBtn
               secondaryBtn
-              name="order now"
+              name={orderNowBtnText}
               onClick={() => router.push(`/${orderNowBtnPath}/design`)}
             />
 

@@ -9,6 +9,8 @@ interface SectionLayout1Props extends featureType {
   btn1Text?: string;
   btn1Path: string;
   showMainImg?: boolean;
+  btn2Path?: string;
+  btn2Text?: string;
 }
 
 const SectionLayout1: React.FC<SectionLayout1Props> = ({
@@ -19,14 +21,41 @@ const SectionLayout1: React.FC<SectionLayout1Props> = ({
   description,
   btn1Path,
   btn1Text = "order now",
+  btn2Path,
+  btn2Text,
 }) => {
   const router = useRouter();
+
+  const Btn = (
+    <>
+      <Button
+        name={btn1Text}
+        outlineBtn
+        secondaryBtn
+        smBtn
+        onClick={() => router.push(`${btn1Path}`)}
+      />
+      {btn2Path && btn2Text && (
+        <Button
+          name={btn2Text}
+          outlineBtn
+          secondaryBtn
+          smBtn
+          onClick={() => router.push(`${btn2Path}`)}
+        />
+      )}
+    </>
+  );
 
   return (
     <Wrapper>
       {showMainImg && (
         <ImgContainer>
-          <NextImg src={img} objectFit="cover" placeholder="blur" />
+          {typeof img === "string" ? (
+            <video src={img} autoPlay loop muted />
+          ) : (
+            <NextImg src={img} objectFit="cover" placeholder="blur" />
+          )}
         </ImgContainer>
       )}
 
@@ -36,13 +65,7 @@ const SectionLayout1: React.FC<SectionLayout1Props> = ({
             <div className="left">
               <p className="caption-text">{caption}</p>
               <h2 className="heading-2">{title}</h2>
-              <Button
-                name={btn1Text}
-                outlineBtn
-                secondaryBtn
-                smBtn
-                onClick={() => router.push(`${btn1Path}`)}
-              />
+              {Btn}
             </div>
 
             <div className="right">
@@ -50,15 +73,7 @@ const SectionLayout1: React.FC<SectionLayout1Props> = ({
             </div>
           </div>
 
-          <BtnContainer>
-            <Button
-              name={btn1Text}
-              outlineBtn
-              secondaryBtn
-              smBtn
-              onClick={() => router.push(`${btn1Path}`)}
-            />
-          </BtnContainer>
+          <BtnContainer>{Btn}</BtnContainer>
         </Content>
       </div>
     </Wrapper>

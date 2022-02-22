@@ -75,7 +75,7 @@ export const BtnContainer = styled.div<btnContainerProps>`
           !secondBtnText && !secondBtnPath ? "55px" : "max(12px, 2vw)"};
     }
 
-    @media (min-width: 576px) {
+    @media (min-width: 1024px) {
       &:last-child {
         margin-left: 1rem;
       }

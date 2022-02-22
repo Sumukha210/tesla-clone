@@ -47,7 +47,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/components/customHooks/useIsomorphicLayoutEffect.js"
+    "src/components/customHooks/useIsomorphicLayoutEffect.ts"
   ],
   "exclude": [
     "node_modules"

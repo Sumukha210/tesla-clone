@@ -4,7 +4,15 @@ import { featureType } from "./types";
 import img from "@/assets/images/solarRoof-page/efficiency.jpg";
 import styled from "styled-components";
 
-const Efficiency = () => {
+interface efficiencyProps {
+  orderNowBtnPath?: string;
+  marginTop?: boolean;
+}
+
+const Efficiency: React.FC<efficiencyProps> = ({
+  orderNowBtnPath = "solarroof",
+  marginTop = true,
+}) => {
   const data: featureType = {
     caption: "efficiency",
     title: "Maximum Solar Production",
@@ -13,8 +21,8 @@ const Efficiency = () => {
   };
 
   return (
-    <Wrapper className="margin-top">
-      <GridSection data={data} orderNowBtnPath="solarroof" />
+    <Wrapper className={marginTop ? "margin-top" : ""}>
+      <GridSection data={data} orderNowBtnPath={orderNowBtnPath} />
     </Wrapper>
   );
 };

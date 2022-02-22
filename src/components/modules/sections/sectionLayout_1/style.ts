@@ -5,6 +5,21 @@ export const Wrapper = styled.div``;
 
 export const ImgContainer = styled(BgImg)`
   height: 550px;
+
+  video {
+    height: 550px;
+
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @media (min-width: 992px) {
+    height: 70vh;
+
+    video {
+      height: 70vh;
+    }
+  }
 `;
 
 export const Content = styled.div`
