@@ -25,7 +25,12 @@ const HeroTemplate: React.FC<HeroTemplateProps> = ({
     <>
       <Wrapper>
         <BgImg>
-          <NextImg src={img} placeholder="blur" objectFit="cover" />
+          <NextImg
+            src={img}
+            placeholder="blur"
+            objectFit="cover"
+            layout="responsive"
+          />
         </BgImg>
 
         <Content isHeroPage={router.pathname === "/"}>

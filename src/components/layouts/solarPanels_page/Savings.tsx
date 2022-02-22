@@ -1,8 +1,18 @@
-import React from "react";
-import SectionLayout1 from "@/module/sections/sectionLayout_2";
+import React, { useRef } from "react";
 import { gridSectionProps } from "@/module/sections/sectionLayout_2/types";
+import { useOnScreen } from "@/customHook/useOnScreen";
+import dynamic from "next/dynamic";
+import LoadingSpinner from "@/element/loadingSpinner";
+
+const DynamicComponent = dynamic(
+  () => import("@/module/sections/sectionLayout_2"),
+  { loading: () => <LoadingSpinner /> }
+);
 
 const Savings = () => {
+  const WrapperRef = useRef(null);
+  const isIntersecting = useOnScreen(WrapperRef, "-100px");
+
   const data: gridSectionProps = {
     data: {
       caption: "savings",
@@ -17,9 +27,9 @@ const Savings = () => {
   };
 
   return (
-    <>
-      <SectionLayout1 {...data} />
-    </>
+    <div ref={WrapperRef}>
+      {isIntersecting && <DynamicComponent {...data} />}
+    </div>
   );
 };
 
