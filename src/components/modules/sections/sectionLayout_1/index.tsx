@@ -1,17 +1,8 @@
 import React from "react";
-import NextImg from "next/image";
-import Button from "@/element/button";
-import { useRouter } from "next/router";
-import { ImgContainer, Content, Wrapper, BtnContainer } from "./style";
-import { featureType } from "@/layout/solarRoof_page/types";
-
-interface SectionLayout1Props extends featureType {
-  btn1Text?: string;
-  btn1Path: string;
-  showMainImg?: boolean;
-  btn2Path?: string;
-  btn2Text?: string;
-}
+import { Content, Wrapper, BtnContainer } from "./style";
+import { SectionLayout1Props } from "./types";
+import ButtonContainer from "./BtnContainer";
+import MediaContainer from "./MediaContainer";
 
 const SectionLayout1: React.FC<SectionLayout1Props> = ({
   showMainImg = true,
@@ -23,41 +14,20 @@ const SectionLayout1: React.FC<SectionLayout1Props> = ({
   btn1Text = "order now",
   btn2Path,
   btn2Text,
+  children,
 }) => {
-  const router = useRouter();
-
   const Btn = (
-    <>
-      <Button
-        name={btn1Text}
-        outlineBtn
-        secondaryBtn
-        smBtn
-        onClick={() => router.push(`${btn1Path}`)}
-      />
-      {btn2Path && btn2Text && (
-        <Button
-          name={btn2Text}
-          outlineBtn
-          secondaryBtn
-          smBtn
-          onClick={() => router.push(`${btn2Path}`)}
-        />
-      )}
-    </>
+    <ButtonContainer
+      btn1Text={btn1Text}
+      btn1Path={btn1Path}
+      btn2Path={btn2Path}
+      btn2Text={btn2Text}
+    />
   );
 
   return (
     <Wrapper>
-      {showMainImg && (
-        <ImgContainer>
-          {typeof img === "string" ? (
-            <video src={img} autoPlay loop muted />
-          ) : (
-            <NextImg src={img} objectFit="cover" placeholder="blur" />
-          )}
-        </ImgContainer>
-      )}
+      {showMainImg && <MediaContainer children={children} img={img} />}
 
       <div className="container">
         <Content>

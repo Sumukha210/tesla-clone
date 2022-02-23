@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { featureType } from "../types";
 import SectionLayout1 from "@/module/sections/sectionLayout_1";
+import { featureType } from "@/types/featureType";
 
 const ContentSection = () => {
   const data: featureType = {

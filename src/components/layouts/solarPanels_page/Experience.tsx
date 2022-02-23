@@ -1,7 +1,7 @@
 import React from "react";
 import SectionLayout1 from "@/module/sections/sectionLayout_1";
-import { featureType } from "./types";
 import designImg from "@/assets/images/solarRoof-page/control.jpg";
+import { featureType } from "@/types/featureType";
 
 const Experience = () => {
   const designData: featureType = {

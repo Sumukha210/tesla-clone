@@ -1,8 +1,8 @@
 import React from "react";
 import GridSection from "../../modules/sections/sectionLayout_2";
-import { featureType } from "./types";
 import img from "@/assets/images/solarRoof-page/efficiency.jpg";
 import styled from "styled-components";
+import { featureType } from "@/types/featureType";
 
 interface efficiencyProps {
   orderNowBtnPath?: string;

@@ -1,8 +1,8 @@
 import React from "react";
 import SectionLayout1 from "@/module/sections/sectionLayout_1";
-import { featureType } from "./types";
 import img from "@/assets/images/solarPanels-page/powerwall.jpg";
 import styled from "styled-components";
+import { featureType } from "@/types/featureType";
 
 const PowerWall = () => {
   const data: featureType = {

@@ -2,7 +2,7 @@ import { useOnScreen } from "@/customHook/useOnScreen";
 import LoadingSpinner from "@/element/loadingSpinner";
 import dynamic from "next/dynamic";
 import React, { useRef } from "react";
-import { featureType } from "./types";
+import { featureType } from "@/types/featureType";
 
 const DynamicComponent = dynamic(
   () => import("@/module/sections/sectionLayout_1"),

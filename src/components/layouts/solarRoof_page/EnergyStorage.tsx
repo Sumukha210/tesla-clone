@@ -1,7 +1,7 @@
 import React from "react";
 import GridSection from "../../modules/sections/sectionLayout_2";
-import { featureType } from "./types";
 import img from "@/assets/images/solarRoof-page/energy-storage.jpg";
+import { featureType } from "@/types/featureType";
 
 const EnergyStorage = () => {
   const data: featureType = {

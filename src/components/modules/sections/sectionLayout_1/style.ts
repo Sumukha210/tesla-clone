@@ -81,3 +81,11 @@ export const BtnContainer = styled.div`
     margin-top: 1.5rem;
   }
 `;
+
+export const OverlapOnMedia = styled.div`
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  margin: auto;
+  text-align: center;
+`;
