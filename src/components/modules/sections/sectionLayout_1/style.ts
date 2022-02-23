@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div``;
 
 export const ImgContainer = styled(BgImg)`
+  position: relative;
   height: 550px;
 
   video {
@@ -80,12 +81,4 @@ export const BtnContainer = styled.div`
   @media (max-width: 575.98px) {
     margin-top: 1.5rem;
   }
-`;
-
-export const OverlapOnMedia = styled.div`
-  position: absolute;
-  bottom: 4%;
-  left: 50%;
-  margin: auto;
-  text-align: center;
 `;

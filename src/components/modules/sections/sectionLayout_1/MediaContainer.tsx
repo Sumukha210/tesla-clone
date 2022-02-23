@@ -1,5 +1,5 @@
 import React from "react";
-import { ImgContainer, OverlapOnMedia } from "./style";
+import { ImgContainer } from "./style";
 import NextImg from "next/image";
 
 interface mediaContainerProps {
@@ -16,7 +16,7 @@ const MediaContainer: React.FC<mediaContainerProps> = ({ children, img }) => {
           <NextImg src={img} objectFit="cover" placeholder="blur" />
         )}
 
-        {children && <OverlapOnMedia>{children}</OverlapOnMedia>}
+        {children && children}
       </ImgContainer>
     </>
   );

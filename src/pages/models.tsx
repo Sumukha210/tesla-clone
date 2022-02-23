@@ -3,6 +3,7 @@ import Layout from "@/shared/Layout";
 import Hero from "@/layout/modelS_page/Hero";
 import InteriorAndSpec from "@/module/interiorAndSpec";
 import { products } from "@/utils/productDetails";
+import PlaidModel from "@/layout/modelS_page/PlaidModel";
 
 const ModelSPage = () => {
   const { allNewInterior } = products[0];
@@ -17,6 +18,7 @@ const ModelSPage = () => {
           carousel={allNewInterior?.carousel}
         />
       )}
+      <PlaidModel />
     </Layout>
   );
 };
