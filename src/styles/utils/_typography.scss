@@ -33,14 +33,14 @@
     line-height: 28px;
 
     @include breakpoint-down(sm) {
-      font-size: 1.25rem; //20px
+      font-size: 1.125rem; //18px
       line-height: 24px;
     }
   }
 
   &-4 {
     @include headingStyles();
-    font-size: 1.25rem; //20px
+    font-size: 1.125rem; //18px
     line-height: 24px;
 
     @include breakpoint-down(sm) {

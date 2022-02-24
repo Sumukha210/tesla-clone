@@ -4,6 +4,7 @@ import Hero from "@/layout/modelS_page/Hero";
 import InteriorAndSpec from "@/module/interiorAndSpec";
 import { products } from "@/utils/productDetails";
 import PlaidModel from "@/layout/modelS_page/PlaidModel";
+import ElectricPowertrain from "@/layout/modelS_page/ElectricPowertrain";
 
 const ModelSPage = () => {
   const { allNewInterior } = products[0];
@@ -19,6 +20,7 @@ const ModelSPage = () => {
         />
       )}
       <PlaidModel />
+      <ElectricPowertrain />
     </Layout>
   );
 };
