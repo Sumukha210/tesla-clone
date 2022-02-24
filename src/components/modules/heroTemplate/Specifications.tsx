@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { specificationsTypes } from "@/utils/productDetails/types";
 import { useRouter } from "next/router";
 import Button from "@/element/button";
+import { Spec, Wrapper } from "./specificationStyles";
 
 interface specificationProps {
   specifications: specificationsTypes[];
@@ -17,11 +18,11 @@ const Specifications: React.FC<specificationProps> = ({
   return (
     <Wrapper>
       <div>
-        {specifications?.map(({ specName, specValue }) => {
+        {specifications?.map(({ specName, specValue }, index) => {
           const split = specValue.split(" ");
 
           return (
-            <Spec key={specName}>
+            <Spec key={index}>
               <h2>
                 <span className="heading-2">{split[0]}</span>
                 <span className="heading-3"> {split[1]}</span>
@@ -42,40 +43,3 @@ const Specifications: React.FC<specificationProps> = ({
 };
 
 export default Specifications;
-
-const Wrapper = styled.div`
-  & > div {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0%;
-    left: 0%;
-    width: 100%;
-    background: linear-gradient(1deg, rgba(0, 0, 0, 0.7), transparent);
-    backdrop-filter: blur(4px);
-    height: 20%;
-  }
-`;
-
-const Spec = styled.div`
-  color: #fff;
-
-  h2 {
-    font-weight: 600;
-  }
-
-  h5 {
-    font-weight: 400;
-    margin-top: 8px;
-  }
-
-  &:not(:last-child) {
-    margin-right: 3rem;
-  }
-`;
