@@ -3,6 +3,7 @@ import Layout from "@/shared/Layout";
 import Hero from "@/layout/utilities_page/Hero";
 import Overview from "@/layout/utilities_page/Overview";
 import Hardware from "@/layout/utilities_page/Hardware";
+import Reliability from "@/layout/utilities_page/Reliability";
 
 const UtilitiesPage = () => {
   return (
@@ -10,6 +11,7 @@ const UtilitiesPage = () => {
       <Hero />
       <Overview />
       <Hardware />
+      <Reliability />
     </Layout>
   );
 };

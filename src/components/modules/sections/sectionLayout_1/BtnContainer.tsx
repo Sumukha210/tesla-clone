@@ -14,7 +14,7 @@ const BtnContainer: React.FC<btnContainerProps> = ({
   return (
     <>
       <>
-        {btn1Text && (
+        {btn1Text && btn1Path && (
           <Button
             name={btn1Text}
             outlineBtn
