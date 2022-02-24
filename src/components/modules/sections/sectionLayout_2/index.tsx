@@ -12,6 +12,7 @@ const SectionLayout2: React.FC<gridSectionProps> = ({
   secondBtnPath = null,
   imgFirst = false,
   orderNowBtnText = "order now",
+  children,
 }) => {
   const { img, title, caption, description } = data;
   const router = useRouter();
@@ -29,13 +30,15 @@ const SectionLayout2: React.FC<gridSectionProps> = ({
           <BtnContainer
             secondBtnPath={secondBtnPath}
             secondBtnText={secondBtnText}>
-            <Button
-              outlineBtn
-              smBtn
-              secondaryBtn
-              name={orderNowBtnText}
-              onClick={() => router.push(`/${orderNowBtnPath}/design`)}
-            />
+            {orderNowBtnPath && (
+              <Button
+                outlineBtn
+                smBtn
+                secondaryBtn
+                name={orderNowBtnText}
+                onClick={() => router.push(`/${orderNowBtnPath}/design`)}
+              />
+            )}
 
             {secondBtnText && secondBtnPath && (
               <Button
@@ -56,6 +59,8 @@ const SectionLayout2: React.FC<gridSectionProps> = ({
             ) : (
               <NextImg src={img} objectFit="cover" placeholder="blur" />
             )}
+
+            {children && children}
           </ImgContainer>
         </div>
       </Content>

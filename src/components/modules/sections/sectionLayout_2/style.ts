@@ -6,6 +6,7 @@ export const Wrapper = styled.div``;
 
 export const ImgContainer = styled(BgImg)`
   height: 70vh;
+  position: relative;
 
   video {
     height: 70vh;

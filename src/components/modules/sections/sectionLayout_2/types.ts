@@ -11,6 +11,6 @@ export interface btnContainerProps {
 
 export interface gridSectionProps extends btnContainerProps, gridContentProps {
   data: featureType;
-  orderNowBtnPath: string;
+  orderNowBtnPath?: string;
   orderNowBtnText?: string;
 }

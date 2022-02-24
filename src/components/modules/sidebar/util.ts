@@ -12,6 +12,7 @@ export const links: linksTypes[] = [
   { name: "Semi", href: "/semi" },
   { name: "Charging", href: "/charging" },
   { name: "Powerwall", href: "/powerwall" },
+  { name: "Megapack", href: "/megapack" },
   { name: "Commercial Energy", href: "/commmericalenergy" },
   { name: "Utilities", href: "/utilities" },
   { name: "Find Us", href: "/findus" },
