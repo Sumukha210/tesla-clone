@@ -5,7 +5,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tsc": "tsc",
+    "tsc:watch": "tsc -w"
   },
   "dependencies": {
     "isomorphic-dompurify": "^0.18.0",
