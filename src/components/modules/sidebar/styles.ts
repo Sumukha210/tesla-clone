@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   visibility: hidden;
   opacity: 0;
 
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in;
 
   &.active {
     visibility: visible;
@@ -49,7 +49,7 @@ export const SideNav = styled.div`
   top: 0;
   right: -395px;
   height: 100%;
-  transition: right 0.7s ease-in-out;
+  transition: right 0.3s ease-in;
   z-index: 10001;
 
   &.active {

@@ -27,7 +27,7 @@ const SectionLayout1: React.FC<SectionLayout1Props> = ({
 
   return (
     <Wrapper>
-      {showMainImg && <MediaContainer children={children} img={img} />}
+      {showMainImg && <MediaContainer img={img}>{children}</MediaContainer>}
 
       <div className="container">
         <Content>

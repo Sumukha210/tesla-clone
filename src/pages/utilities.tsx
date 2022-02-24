@@ -7,7 +7,7 @@ import Reliability from "@/layout/utilities_page/Reliability";
 
 const UtilitiesPage = () => {
   return (
-    <Layout>
+    <Layout lightColorNav>
       <Hero />
       <Overview />
       <Hardware />
