@@ -1,10 +1,22 @@
-import styled from "styled-components";
 import { specificationsTypes } from "@/utils/productDetails/types";
 import { useRouter } from "next/router";
 import Button from "@/element/button";
-import { Spec, Wrapper } from "./specificationStyles";
+import {
+  Spec,
+  Wrapper,
+  SpecContainer,
+  BtnContainer,
+} from "./specificationStyles";
 
-interface specificationProps {
+export interface SpecProps {
+  textColor?: string;
+}
+
+export interface WrapperProps {
+  showOverlay?: boolean;
+}
+
+interface specificationProps extends SpecProps, WrapperProps {
   specifications: specificationsTypes[];
   id: string;
 }
@@ -12,17 +24,19 @@ interface specificationProps {
 const Specifications: React.FC<specificationProps> = ({
   specifications,
   id,
+  showOverlay,
+  textColor,
 }) => {
   const router = useRouter();
 
   return (
-    <Wrapper>
-      <div>
+    <Wrapper showOverlay={showOverlay}>
+      <SpecContainer className="speccontainer">
         {specifications?.map(({ specName, specValue }, index) => {
           const split = specValue.split(" ");
 
           return (
-            <Spec key={index}>
+            <Spec textColor={textColor} key={index}>
               <h2>
                 <span className="heading-2">{split[0]}</span>
                 <span className="heading-3"> {split[1]}</span>
@@ -31,13 +45,11 @@ const Specifications: React.FC<specificationProps> = ({
             </Spec>
           );
         })}
-        <div>
-          <Button
-            name="Order now"
-            onClick={() => router.push(`${id}/design`)}
-          />
-        </div>
-      </div>
+      </SpecContainer>
+
+      <BtnContainer>
+        <Button name="Order now" onClick={() => router.push(`${id}/design`)} />
+      </BtnContainer>
     </Wrapper>
   );
 };

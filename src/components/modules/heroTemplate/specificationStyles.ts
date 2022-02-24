@@ -1,17 +1,8 @@
 import styled, { css } from "styled-components";
-
-interface SpecProps {
-  textColor?: string;
-}
-
-interface WrapperProps {
-  showOverlay?: boolean;
-}
+import { SpecProps, WrapperProps } from "./Specifications";
 
 export const Wrapper = styled.div<WrapperProps>`
-  & > div {
-    position: relative;
-    z-index: 2;
+  @media (min-width: 768px) {
     display: flex;
     justify-content: center;
   }
@@ -32,6 +23,14 @@ export const Wrapper = styled.div<WrapperProps>`
   }
 `;
 
+export const SpecContainer = styled.div`
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+  z-index: 2;
+`;
+
 export const Spec = styled.div<SpecProps>`
   color: ${({ textColor }) => textColor || "#fff"};
 
@@ -46,5 +45,36 @@ export const Spec = styled.div<SpecProps>`
 
   &:not(:last-child) {
     margin-right: 3rem;
+
+    @media (max-width: 575.98px) {
+      margin-right: 1rem;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    &:nth-child(4) {
+      display: none;
+    }
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+`;
+
+export const BtnContainer = styled.div`
+  position: relative;
+  z-index: 2;
+
+  @media (min-width: 992px) {
+    margin-left: 4rem;
+  }
+
+  button {
+    @media (max-width: 767.98px) {
+      width: 100%;
+      display: block;
+    }
   }
 `;

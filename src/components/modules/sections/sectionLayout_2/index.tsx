@@ -5,7 +5,7 @@ import Button from "@/element/button";
 import { useRouter } from "next/router";
 import { gridSectionProps } from "./types";
 
-const GridSection: React.FC<gridSectionProps> = ({
+const SectionLayout2: React.FC<gridSectionProps> = ({
   data,
   orderNowBtnPath,
   secondBtnText = null,
@@ -63,4 +63,4 @@ const GridSection: React.FC<gridSectionProps> = ({
   );
 };
 
-export default GridSection;
+export default SectionLayout2;
