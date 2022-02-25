@@ -27,6 +27,10 @@ export const DescriptionSection = styled.div`
   text-align: center;
   margin-bottom: 2rem;
 
+  @media (max-width: 575.98px) {
+    grid-template-columns: 0.8fr;
+  }
+
   h3 {
     font-weight: 500;
   }

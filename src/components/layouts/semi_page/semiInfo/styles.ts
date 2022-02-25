@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  background-color: #000000;
-`;
+export const Wrapper = styled.div``;
 
 export const VideoContainer = styled.div`
   height: 349px;

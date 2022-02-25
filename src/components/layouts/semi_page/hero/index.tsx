@@ -7,6 +7,7 @@ import {
   BtnContainer,
   Spec,
   SpecContainer,
+  Wrapper,
 } from "@/module/heroTemplate/specificationStyles";
 import { IconType } from "react-icons";
 import { Content, DescriptionSection, HeroWrapper } from "./styles";
@@ -39,30 +40,34 @@ const Hero = () => {
             </h3>
           </DescriptionSection>
 
-          <SpecContainer>
-            {specifications.map(({ specName, specValue: SpecValue }, index) => (
-              <Spec key={index}>
-                <h2 className="heading-2">
-                  {typeof SpecValue === "string" ? (
-                    SpecValue
-                  ) : (
-                    <>
-                      <SpecValue /> 20
-                    </>
-                  )}
-                </h2>
-                <h5
-                  className="subtitle-3"
-                  dangerouslySetInnerHTML={{
-                    __html: DOMPurify.sanitize(specName),
-                  }}></h5>
-              </Spec>
-            ))}
-          </SpecContainer>
+          <Wrapper showOverlay={false}>
+            <SpecContainer>
+              {specifications.map(
+                ({ specName, specValue: SpecValue }, index) => (
+                  <Spec key={index}>
+                    <h2 className="heading-2">
+                      {typeof SpecValue === "string" ? (
+                        SpecValue
+                      ) : (
+                        <>
+                          <SpecValue /> 20
+                        </>
+                      )}
+                    </h2>
+                    <h5
+                      className="subtitle-3"
+                      dangerouslySetInnerHTML={{
+                        __html: DOMPurify.sanitize(specName),
+                      }}></h5>
+                  </Spec>
+                )
+              )}
+            </SpecContainer>
 
-          <BtnContainer>
-            <Button name="reserve now" variant="text" />
-          </BtnContainer>
+            <BtnContainer>
+              <Button name="reserve now" variant="outline" color="light" />
+            </BtnContainer>
+          </Wrapper>
         </Content>
       </HeroTemplate>
     </HeroWrapper>
