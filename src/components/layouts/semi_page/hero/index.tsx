@@ -9,8 +9,8 @@ import {
   SpecContainer,
 } from "@/module/heroTemplate/specificationStyles";
 import { IconType } from "react-icons";
-import Button from "@/element/button";
 import { Content, DescriptionSection, HeroWrapper } from "./styles";
+import Button from "@/element/button";
 
 interface specificationsTypes {
   specName: string;
@@ -61,7 +61,7 @@ const Hero = () => {
           </SpecContainer>
 
           <BtnContainer>
-            <Button name="reserve now" />
+            <Button name="reserve now" variant="text" />
           </BtnContainer>
         </Content>
       </HeroTemplate>

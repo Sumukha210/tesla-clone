@@ -32,9 +32,8 @@ const SectionLayout2: React.FC<gridSectionProps> = ({
             secondBtnText={secondBtnText}>
             {orderNowBtnPath && (
               <Button
-                outlineBtn
-                smBtn
-                secondaryBtn
+                variant="outline"
+                color="dark"
                 name={orderNowBtnText}
                 onClick={() => router.push(`/${orderNowBtnPath}/design`)}
               />
@@ -42,9 +41,8 @@ const SectionLayout2: React.FC<gridSectionProps> = ({
 
             {secondBtnText && secondBtnPath && (
               <Button
-                outlineBtn
-                smBtn
-                secondaryBtn
+                variant="outline"
+                color="dark"
                 name="learn more"
                 onClick={() => router.push(`/${secondBtnPath}`)}
               />

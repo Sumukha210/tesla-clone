@@ -14,8 +14,8 @@ const Hero = () => {
     <CustomHero>
       <HeroTemplate
         img={heroImg}
-        name="Solar Roof"
-        subtitle="Transform your roof and produce clean energy">
+        name="Solar for Existing Roofs"
+        subtitle="Lowest Cost Solar Panels in America—Money-back guarantee">
         <Wrapper>
           <SpecificationContent>
             <div>
@@ -44,9 +44,9 @@ const Hero = () => {
 
           <div>
             <Button
-              outlineBtn={true}
-              lightOutlineBtn={true}
               name="Order now"
+              variant="outline"
+              color="light"
               onClick={() => router.push("/energy/design")}
             />
           </div>

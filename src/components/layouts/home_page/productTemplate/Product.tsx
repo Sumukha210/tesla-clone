@@ -28,10 +28,12 @@ const Product: React.FC<generalInfoType> = ({ name, id, productType, img }) => {
         <BtnContainer>
           <Button
             name={primaryBtnName}
+            color="dark"
+            size="large"
             onClick={() => router.push(`/${id}/design`)}
           />
           {productType != "accessories" && (
-            <Button name={secondaryBtnName} secondaryBtn={true} />
+            <Button name={secondaryBtnName} color="dimColor" size="sm" />
           )}
         </BtnContainer>
       </HeroTemplate>

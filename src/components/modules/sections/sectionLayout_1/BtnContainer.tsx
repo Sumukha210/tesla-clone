@@ -17,9 +17,8 @@ const BtnContainer: React.FC<btnContainerProps> = ({
         {btn1Text && btn1Path && (
           <Button
             name={btn1Text}
-            outlineBtn
-            secondaryBtn
-            smBtn
+            variant="outline"
+            color="dark"
             onClick={() => router.push(`${btn1Path}`)}
           />
         )}
@@ -27,9 +26,8 @@ const BtnContainer: React.FC<btnContainerProps> = ({
         {btn2Path && btn2Text && (
           <Button
             name={btn2Text}
-            outlineBtn
-            secondaryBtn
-            smBtn
+            variant="outline"
+            color="dark"
             onClick={() => router.push(`${btn2Path}`)}
           />
         )}

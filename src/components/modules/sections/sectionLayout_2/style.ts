@@ -1,5 +1,5 @@
 import { BgImg } from "@/module/heroTemplate/styles";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { btnContainerProps, gridContentProps } from "./types";
 
 export const Wrapper = styled.div``;
@@ -69,11 +69,21 @@ export const Content = styled.div<gridContentProps>`
 `;
 
 export const BtnContainer = styled.div<btnContainerProps>`
+  @media (min-width: 992px) {
+    display: flex;
+  }
+
   button {
     @media (min-width: 992px) {
-      padding: 13px
-        ${({ secondBtnText, secondBtnPath }) =>
-          !secondBtnText && !secondBtnPath ? "55px" : "max(12px, 2vw)"};
+      ${({ secondBtnPath, secondBtnText }) =>
+        secondBtnPath && secondBtnText
+          ? css`
+              padding: 13px 0;
+              width: 100%;
+            `
+          : css`
+              padding: 13px 55px;
+            `}
     }
 
     @media (min-width: 1024px) {

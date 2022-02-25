@@ -41,8 +41,8 @@ const Hero = () => {
 
           <div>
             <Button
-              outlineBtn={true}
-              lightOutlineBtn={true}
+              variant="outline"
+              color="light"
               name="Order now"
               onClick={() => router.push("/solarroof/design")}
             />

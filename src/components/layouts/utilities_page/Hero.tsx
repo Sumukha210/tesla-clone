@@ -44,8 +44,8 @@ const Hero = () => {
 
           <BtnContainer>
             <Button
-              outlineBtn
-              lightOutlineBtn
+              variant="outline"
+              color="light"
               name="Contact us"
               onClick={() => router.push("/contact-us")}
             />
