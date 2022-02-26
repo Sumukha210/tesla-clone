@@ -6,6 +6,7 @@ import { products } from "@/utils/productDetails";
 import PlaidModel from "@/layout/modelS_page/PlaidModel";
 import ElectricPowertrain from "@/layout/modelS_page/ElectricPowertrain";
 import Exterior from "@/layout/modelS_page/Exterior";
+import Range from "@/layout/modelS_page/Range";
 
 const ModelSPage = () => {
   const { allNewInterior } = products[0];
@@ -23,6 +24,7 @@ const ModelSPage = () => {
       <PlaidModel />
       <ElectricPowertrain />
       <Exterior />
+      <Range />
     </Layout>
   );
 };
