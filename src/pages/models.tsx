@@ -7,6 +7,7 @@ import PlaidModel from "@/layout/modelS_page/PlaidModel";
 import ElectricPowertrain from "@/layout/modelS_page/ElectricPowertrain";
 import Exterior from "@/layout/modelS_page/Exterior";
 import Range from "@/layout/modelS_page/Range";
+import AutoPilot from "@/module/Autopilot";
 
 const ModelSPage = () => {
   const { allNewInterior } = products[0];
@@ -25,6 +26,7 @@ const ModelSPage = () => {
       <ElectricPowertrain />
       <Exterior />
       <Range />
+      <AutoPilot />
     </Layout>
   );
 };
