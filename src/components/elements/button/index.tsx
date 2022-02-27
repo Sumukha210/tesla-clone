@@ -15,3 +15,7 @@ const Button: React.FC<btnProps> = ({
 };
 
 export default Button;
+
+Button.defaultProps = {
+  variant: "standard",
+};

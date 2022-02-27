@@ -28,6 +28,7 @@ const ContentSlider: React.FC<ContentSliderProps> = ({
             ))}
           </div>
         </div>
+
         <div className="right">
           <h2 className="heading-3">{currentEle.title}</h2>
           <h5 className="subtitle-2">{currentEle.subtitle}</h5>

@@ -48,6 +48,12 @@ export const CarouselContainer = styled.div`
 export const ContentContainer = styled.div`
   padding-top: 5rem;
 
+  @media (max-width: 575.98px) {
+    & > div.flex {
+      flex-direction: column;
+    }
+  }
+
   @media (min-width: 1200px) {
     width: 60%;
     margin: auto;
@@ -71,6 +77,16 @@ export const ContentContainer = styled.div`
 
       &:not(:last-child) {
         margin-right: 10px;
+      }
+
+      @media (max-width: 575.98px) {
+        margin-bottom: 2rem;
+
+        &:not(:last-child) {
+          margin-right: 16px;
+          height: 12px;
+          width: 12px;
+        }
       }
     }
   }

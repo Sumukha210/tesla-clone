@@ -48,7 +48,12 @@ const Specifications: React.FC<specificationProps> = ({
       </SpecContainer>
 
       <BtnContainer>
-        <Button name="Order now" onClick={() => router.push(`${id}/design`)} />
+        <Button
+          name="Order now"
+          variant="outline"
+          color="light"
+          onClick={() => router.push(`${id}/design`)}
+        />
       </BtnContainer>
     </Wrapper>
   );

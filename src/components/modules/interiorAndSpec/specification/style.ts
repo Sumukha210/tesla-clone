@@ -11,11 +11,6 @@ export const Wrapper = styled.div`
 `;
 
 export const Spec = styled.div`
-  @media (min-width: 1200px) {
-    display: flex;
-    align-items: center;
-  }
-
   &:nth-child(2) {
     flex-flow: row-reverse;
     .right .content {
@@ -66,6 +61,21 @@ export const Spec = styled.div`
           width: 100% !important;
         }
       }
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 767.98px) {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    .content {
+      padding: 2rem 0 0 0 !important;
     }
   }
 `;

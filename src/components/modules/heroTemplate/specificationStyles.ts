@@ -75,6 +75,7 @@ export const BtnContainer = styled.div`
     @media (max-width: 767.98px) {
       width: 100%;
       display: block;
+      margin-top: 3.5rem;
     }
   }
 `;
