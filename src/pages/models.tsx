@@ -8,6 +8,7 @@ import ElectricPowertrain from "@/layout/modelS_page/ElectricPowertrain";
 import Exterior from "@/layout/modelS_page/Exterior";
 import Range from "@/layout/modelS_page/Range";
 import AutoPilot from "@/module/Autopilot";
+import FeatureCarousel from "@/module/featuresCarousel";
 
 const ModelSPage = () => {
   const { allNewInterior } = products[0];
@@ -27,6 +28,7 @@ const ModelSPage = () => {
       <Exterior />
       <Range />
       <AutoPilot />
+      <FeatureCarousel />
     </Layout>
   );
 };
