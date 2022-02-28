@@ -4,7 +4,20 @@ import { headerProps } from "./types";
 
 export const TemplateWrapper = styled.div``;
 
-export const Header = styled.div<headerProps>``;
+export const Header = styled.div<headerProps>`
+  background: ${({ headerBgColor }) =>
+    headerBgColor === "light" ? "#fff" : "#000"};
+
+  h2 {
+    color: ${({ headerBgColor }) =>
+      headerBgColor === "dark" ? "#fff" : "#000"};
+  }
+
+  p {
+    color: ${({ headerBgColor }) =>
+      headerBgColor === "dark" ? "#e2e3e3" : "#000"} !important;
+  }
+`;
 
 export const GridContainer = styled.div`
   background-color: #000;

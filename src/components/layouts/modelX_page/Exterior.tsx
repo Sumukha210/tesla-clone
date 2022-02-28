@@ -1,18 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import ExteriorTemplate from "@/module/exteriorTemplate";
-import gridAImg from "@/assets/images/models-page/MS-Exterior-Grid-A-Desktop.jpg";
-import gridBImg from "@/assets/images/models-page/MS-Exterior-Grid-B-Desktop.jpg";
-import gridCImg from "@/assets/images/models-page/MS-Exterior-Grid-C-Desktop.jpg";
-import heroImg from "@/assets/images/models-page/MS-Exterior-Hero-Desktop.jpg";
+import gridAImg from "@/assets/images/modelx-page/MX-Exterior-Grid-A-Desktop.jpg";
+import gridBImg from "@/assets/images/modelx-page/MX-Exterior-Grid-B-Desktop.jpg";
+import gridCImg from "@/assets/images/modelx-page/MX-Exterior-Grid-C-Desktop.jpg";
+import heroImg from "@/assets/images/modelx-page/MX-Exterior-Hero-Desktop.jpg";
 import { exteriorTemplateProps } from "@/module/exteriorTemplate/types";
 
 const Exterior = () => {
   const data: exteriorTemplateProps = {
     header: {
-      description: `With a drag coefficient of just .208 Cd, the lowest on the planet, Model S is built for speed, endurance and range. Improved aerodynamics and a wider chassis offer more responsive performance so you can take corners quicker and with more confidence.`,
+      description: `With a drag coefficient of just .208 Cd, the lowest on the planet, Model X is built for speed, endurance and range. Improved aerodynamics and a wider chassis offer more responsive performance so you can take corners quicker and with more confidence.`,
       img: heroImg,
-      orderNowBtnPath: "/models/design",
+      orderNowBtnPath: "/modelx/design",
     },
 
     headerBgColor: "light",
@@ -38,7 +38,7 @@ const Exterior = () => {
 
   return (
     <Wrapper>
-      <ExteriorTemplate {...data} headerBgColor="dark" />
+      <ExteriorTemplate {...data} headerBgColor="light" />
     </Wrapper>
   );
 };

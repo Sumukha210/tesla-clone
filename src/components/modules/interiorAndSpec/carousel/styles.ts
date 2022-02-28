@@ -46,7 +46,7 @@ export const CarouselContainer = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  padding-top: 5rem;
+  padding-top: 2.5rem;
 
   @media (max-width: 575.98px) {
     & > div.flex {
@@ -98,7 +98,7 @@ export const ContentContainer = styled.div`
     h5 {
       color: #e2e3e3;
       font-weight: 500;
-      margin-top: 1.5rem;
+      margin-top: 1rem;
     }
   }
 `;

@@ -38,7 +38,7 @@ const Exterior = () => {
 
   return (
     <Wrapper>
-      <ExteriorTemplate {...data} headerBgColor="dark" />
+      <ExteriorTemplate {...data} />
     </Wrapper>
   );
 };
