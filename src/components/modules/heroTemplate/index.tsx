@@ -42,7 +42,9 @@ const HeroTemplate: React.FC<HeroTemplateProps> = ({
                   {subtitle && <h3 className="subtitle-2">{subtitle}</h3>}
                 </TopSection>
 
-                <BottomSection>{children}</BottomSection>
+                <BottomSection className="bottomSection">
+                  {children}
+                </BottomSection>
               </div>
             </div>
           </div>
