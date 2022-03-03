@@ -9,6 +9,8 @@ import Exterior from "@/layout/modelS_page/Exterior";
 import Range from "@/layout/modelS_page/Range";
 import AutoPilot from "@/module/Autopilot";
 import FeatureCarousel from "@/module/featuresCarousel";
+import CompareSection from "@/module/compareSection";
+import compareSectionImg from "@/assets/images/models-page/compareSectionImg.jpg";
 
 const ModelSPage = () => {
   const { allNewInterior } = products[0];
@@ -29,6 +31,11 @@ const ModelSPage = () => {
       <Range />
       <AutoPilot />
       <FeatureCarousel />
+      <CompareSection
+        img={compareSectionImg}
+        orderNowBtnPath="/models/design"
+        title="Model S"
+      />
     </Layout>
   );
 };

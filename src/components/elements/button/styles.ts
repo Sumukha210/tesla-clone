@@ -70,4 +70,8 @@ export const CustomButton = styled.button<customButtonProps>`
         ${color === "light" ? "var(--light-color)" : "var(--dark-color)"};
       color: ${color === "dark" ? "var(--dark-color)" : "var(--light-color)"};
     `};
+
+  @media (max-width: 575.98px) {
+    width: 100%;
+  }
 `;
