@@ -22,7 +22,9 @@ const ContentSection: React.FC<contentSectionProps> = ({
               <h2
                 className="heading-2"
                 dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(menuValues!.specs[key]),
+                  __html: DOMPurify.sanitize(
+                    menuValues!.specs[key as keyof typeof menuValues]
+                  ),
                 }}></h2>
             </Spec>
           );
