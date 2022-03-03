@@ -3,6 +3,7 @@ import Hero from "@/layout/modelY_page/Hero";
 import Layout from "@/shared/Layout";
 import Utility from "@/layout/modelY_page/utility";
 import DualMotor from "@/layout/modelY_page/DualMotor";
+import Range from "@/layout/modelY_page/Range";
 
 const ModelYPage = () => {
   return (
@@ -10,6 +11,7 @@ const ModelYPage = () => {
       <Hero />
       <Utility />
       <DualMotor />
+      <Range />
     </Layout>
   );
 };
