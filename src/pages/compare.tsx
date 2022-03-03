@@ -40,7 +40,7 @@ const ComparePage = () => {
       <Wrapper className="margin-top">
         <div className="container">
           <Header>
-            <h1 className="title-1">Compare Models</h1>
+            <h1 className="heading-1">Compare Models</h1>
           </Header>
 
           <Grid>
