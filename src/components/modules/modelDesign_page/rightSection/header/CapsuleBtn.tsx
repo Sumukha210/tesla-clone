@@ -32,7 +32,7 @@ const Capsule = styled.h4`
   font-weight: 600;
   letter-spacing: 1px;
   cursor: pointer;
-  transition: all 0.3s ease-in;
+  transition: all 0.2s ease-in;
 
   &:last-child {
     margin-left: 10px;
