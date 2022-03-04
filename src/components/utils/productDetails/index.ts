@@ -1,22 +1,15 @@
-import modelYImg from "@/assets/images/home-page/model-y.jpg";
 import solarPanelsImg from "@/assets/images/home-page/solar-panels.jpg";
 import accessoryImg from "@/assets/images/home-page/Accessories.jpg";
 import { productsTypes } from "./types";
 import { modelSDetails } from "./modelSDetails";
 import { modelXDetails } from "./modelXDetails";
 import { solarRoofDetails } from "./solarRoofDetails";
+import { modelYDetails } from "./modelYDetails";
 
 export const products: productsTypes[] = [
   modelSDetails,
   modelXDetails,
-  {
-    generalInfo: {
-      id: "modely",
-      name: "Model Y",
-      productType: "car",
-      img: modelYImg,
-    },
-  },
+  modelYDetails,
   {
     generalInfo: {
       id: "energy",

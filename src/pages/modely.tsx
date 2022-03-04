@@ -7,6 +7,9 @@ import Range from "@/layout/modelY_page/Range";
 import AutoPilot from "@/module/Autopilot";
 import compareSectionImg from "@/assets/images/modely-page/compareImg.jpg";
 import CompareSection from "@/module/compareSection";
+import { modelYDetails } from "@/utils/productDetails/modelYDetails";
+import SpecificationSection from "@/module/specificationsSection";
+import specImage from "@/assets/images/modely-page/MY-Specs-LHD-Desktop.jpg";
 
 const ModelYPage = () => {
   return (
@@ -16,6 +19,15 @@ const ModelYPage = () => {
       <DualMotor />
       <Range />
       <AutoPilot />
+      {modelYDetails?.modelVersion && (
+        <SpecificationSection
+          title="Model Y"
+          img={specImage}
+          compareSpecs
+          modelDetails={modelYDetails.modelVersion}
+        />
+      )}
+
       <CompareSection
         theme="dark"
         img={compareSectionImg}

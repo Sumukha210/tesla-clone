@@ -10,6 +10,7 @@ export const Grid = styled.div`
   display: grid;
   grid-gap: 2rem;
   align-items: center;
+  justify-content: space-between;
 
   @media (min-width: 1200px) {
     grid-template-columns: 1.2fr 0.8fr;
@@ -21,7 +22,7 @@ export const Grid = styled.div`
 `;
 
 export const LeftCol = styled(BgImg)`
-  height: 450px;
+  height: min(300px, 350px);
 `;
 
 export const RightCol = styled.div`
