@@ -21,14 +21,18 @@ const CompareSpecButtons: React.FC<compareSpecButtonsProps> = ({
             }
             size="flexible"
             onClick={() =>
-              handleCurrentModelVersion(restProps.modelDetails.version2)
+              handleCurrentModelVersion(restProps.modelDetails.version1)
             }
           />
 
           <Button
             name={restProps.modelDetails.version2.name}
             variant="outline"
-            color="light"
+            color={
+              currentModelVersion?.name === restProps.modelDetails.version2.name
+                ? "light"
+                : "dimColor"
+            }
             size="flexible"
             onClick={() =>
               handleCurrentModelVersion(restProps.modelDetails.version2)
