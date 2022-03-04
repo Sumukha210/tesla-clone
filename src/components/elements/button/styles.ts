@@ -67,7 +67,11 @@ export const CustomButton = styled.button<customButtonProps>`
     variant === "outline" &&
     css`
       outline: 2px solid
-        ${color === "light" ? "var(--light-color)" : "var(--dark-color)"};
+        ${color === "light"
+          ? "var(--light-color)"
+          : color === "dimColor"
+          ? "rgb(93 95 101 / 80%)"
+          : "var(--dark-color)"};
       color: ${color === "dark" ? "var(--dark-color)" : "var(--light-color)"};
     `};
 

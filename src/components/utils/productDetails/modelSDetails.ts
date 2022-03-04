@@ -19,20 +19,20 @@ export const modelSDetails: productsTypes = {
         { specName: "1/4 Mile", specValue: "9.23@155 mph trap speed" },
         { specName: "Peak Power", specValue: "1,020 hp" },
         { specName: "Wheels", specValue: `19" or 21"` },
-        { specName: "Cargo", specValue: "28 cu ft" },
         { specName: "Weight", specValue: "4,766 lbs" },
+        { specName: "Powertrain", specValue: "Tri Motor" },
+        { specName: "SuperCharging Max", specValue: "250 KW" },
+        { specName: "Cargo", specValue: "28 cu ft" },
         {
           specName: "Acceleration",
-          specValue: "1.99 s 0-60 mph* </br> *with rollout subtracted",
+          specValue: "1.99 s 0-60 mph* <span>*with rollout subtracted</span>",
         },
+        { specName: "Drag coefficient", specValue: "0.208 Cd" },
         {
           specName: "Top Speed",
           specValue:
-            "200 mph* </br> *when equipped with paid hardware upgrades",
+            "200 mph* <span>*when equipped with paid hardware upgrades</span>",
         },
-        { specName: "Drag coefficient", specValue: "0.208 Cd" },
-        { specName: "Powertrain", specValue: "Tri Motor" },
-        { specName: "SuperCharging Max", specValue: "250 KW" },
       ],
     },
 

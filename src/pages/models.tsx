@@ -11,6 +11,9 @@ import AutoPilot from "@/module/Autopilot";
 import FeatureCarousel from "@/module/featuresCarousel";
 import CompareSection from "@/module/compareSection";
 import compareSectionImg from "@/assets/images/models-page/compareSectionImg.jpg";
+import SpecificationSection from "@/module/specificationsSection";
+import { modelSDetails } from "@/utils/productDetails/modelSDetails";
+import specImage from "@/assets/images/models-page/MS-Specs-Hero-Desktop.jpg";
 
 const ModelSPage = () => {
   const { allNewInterior } = products[0];
@@ -31,6 +34,14 @@ const ModelSPage = () => {
       <Range />
       <AutoPilot />
       <FeatureCarousel />
+      {modelSDetails?.modelVersion && (
+        <SpecificationSection
+          title="Model S"
+          img={specImage}
+          compareSpecs
+          modelDetails={modelSDetails.modelVersion}
+        />
+      )}
       <CompareSection
         img={compareSectionImg}
         orderNowBtnPath="/models/design"
