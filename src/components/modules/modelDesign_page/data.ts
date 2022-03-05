@@ -14,6 +14,7 @@ export const modelData: modelDataTypes = {
       { key: "0-60 mph", value: "3.1<span>sec</span>" },
     ],
   },
+
   plaidVersion: {
     purchasePrice: 129990,
     potentialSavings: 124490,
@@ -25,4 +26,23 @@ export const modelData: modelDataTypes = {
       { key: "0-60 mph", value: "1.99<span>sec</span>" },
     ],
   },
+
+  paint: [
+    { color: "Pearl White Multi-Coat", price: "included" },
+    { color: "Solid Black", price: 1500 },
+    { color: "Midnight Silver Metallic", price: 1500 },
+    { color: "Deep Blue Metallic", price: 1500 },
+    { color: "Red Multi-Coat", price: 2500 },
+  ],
+
+  wheels: [
+    { name: `21" Arachnid Wheels`, price: 4500, range: 375 },
+    { name: `19" Tempest Wheels`, price: "included", range: 405 },
+  ],
+
+  interior: [
+    { color: "All Black", price: "included", decor: "Ebony Decor" },
+    { color: "Black and White", price: 2000, decor: "Walnut Decor" },
+    { color: "Cream", price: 2000, decor: "Walnut Decor" },
+  ],
 };

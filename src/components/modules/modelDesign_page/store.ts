@@ -1,6 +1,5 @@
 import create from "zustand";
 import { devtools } from "zustand/middleware";
-import { modelData } from "./data";
 import { modelDataTypes } from "./rightSection/header/types";
 
 type modelVersionTypes = "baseVersion" | "plaidVersion";
