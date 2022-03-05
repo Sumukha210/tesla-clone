@@ -27,6 +27,7 @@ const SpecBlock = () => {
               dangerouslySetInnerHTML={{
                 __html: DOMPurify.sanitize(value),
               }}></h3>
+
             <h5
               className="subtitle-3"
               dangerouslySetInnerHTML={{
@@ -52,7 +53,7 @@ const Spec = styled.div`
     font-weight: bold;
 
     span {
-      font-weight: 600;
+      font-weight: 400;
       font-size: 14px;
       margin-left: 2px;
     }
