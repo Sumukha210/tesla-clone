@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import Header from "./rightSection/header";
 import useStore from "./store";
-import { LeftSection, RightSection, Wrapper } from "./styles";
+import { Wrapper } from "./styles";
 import { modelData } from "./data";
-import RightBlock from "./rightSection";
+import RightBlock from "./rightSection/RightBlock";
+import LeftBlock from "./leftSection/LeftBlock";
 
 const CarModelDesignPage = () => {
   const addModelData = useStore(state => state.addModelData);
@@ -14,7 +14,7 @@ const CarModelDesignPage = () => {
 
   return (
     <Wrapper>
-      <LeftSection></LeftSection>
+      <LeftBlock />
       <RightBlock />
     </Wrapper>
   );

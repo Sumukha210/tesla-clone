@@ -8,6 +8,8 @@ export interface modelVersionTypes {
   specs: { key: string; value: string }[];
 }
 
+export type capsuleBtnTypes = "purchasePrice" | "potentialSavings";
+
 export interface headerProps {
   title: CarModel;
   baseVersion: modelVersionTypes;
@@ -40,10 +42,23 @@ export interface interiorTypes {
   decor?: "Walnut Decor" | "Ebony Decor";
 }
 
+export type imageType = StaticImageData;
+
+export type carModelVersionImageType = {
+  heroImg: imageType;
+  paintImg: imageType;
+  wheelsImg: imageType;
+  interiorImg: imageType;
+};
+
+export interface modelImagesTypes {
+  baseVersion: carModelVersionImageType;
+  plaidVersion: carModelVersionImageType;
+}
+
 export interface modelDataTypes extends headerProps {
   paint: paintTypes[];
   wheels: wheelsTypes[];
   interior: interiorTypes[];
+  images: modelImagesTypes;
 }
-
-export type capsuleBtnTypes = "purchasePrice" | "potentialSavings";
