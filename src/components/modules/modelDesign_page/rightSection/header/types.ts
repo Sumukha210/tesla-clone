@@ -18,4 +18,6 @@ export interface headerProps {
   plaidVersion: modelVersionTypes;
 }
 
+export interface modelDataTypes extends headerProps {}
+
 export type capsuleBtnTypes = "purchasePrice" | "potentialSavings";

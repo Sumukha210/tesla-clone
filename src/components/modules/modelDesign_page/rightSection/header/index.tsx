@@ -2,10 +2,10 @@ import React from "react";
 import useStore from "../../store";
 import CapsuleBtn from "./CapsuleBtn";
 import { HeaderWrapper, CapsuleBtnContainer } from "./styles";
-import { headerProps } from "./types";
 
-const Header: React.FC<headerProps> = ({ title }) => {
+const Header: React.FC = () => {
   const currentCapsule = useStore(state => state.currentCapsule);
+  const { title } = useStore(state => state.modelData);
 
   return (
     <HeaderWrapper>
