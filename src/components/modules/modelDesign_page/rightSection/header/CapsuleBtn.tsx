@@ -1,21 +1,19 @@
-import React from "react";
+import React, { useCallback } from "react";
 import styled from "styled-components";
+import useStore from "../../store";
 
 interface capsuleBtnProps {
   name: string;
   isActive: boolean;
-  handleCapsuleBtn: () => void;
 }
 
-const CapsuleBtn: React.FC<capsuleBtnProps> = ({
-  name,
-  isActive,
-  handleCapsuleBtn,
-}) => {
+const CapsuleBtn: React.FC<capsuleBtnProps> = ({ name, isActive }) => {
+  const changeCurrentCapsule = useStore(state => state.changeCurrentCapsule);
+
   return (
     <Capsule
-      onClick={handleCapsuleBtn}
-      className={`subtitle-3 ${isActive && "active"}`}>
+      onClick={changeCurrentCapsule}
+      className={`subtitle-2 ${isActive && "active"}`}>
       {name}
     </Capsule>
   );
