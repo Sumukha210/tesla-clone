@@ -1,6 +1,6 @@
 import React from "react";
-import { LeftSection } from "../styles";
-import Carousel from "./Carousel";
+import styled from "styled-components";
+import Carousel from "./carousel";
 
 const LeftBlock = () => {
   return (
@@ -11,3 +11,7 @@ const LeftBlock = () => {
 };
 
 export default LeftBlock;
+
+const LeftSection = styled.div`
+  align-self: center;
+`;
