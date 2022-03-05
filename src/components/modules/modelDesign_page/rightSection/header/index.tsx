@@ -5,12 +5,12 @@ import { HeaderWrapper, CapsuleBtnContainer } from "./styles";
 
 const Header: React.FC = () => {
   const currentCapsule = useStore(state => state.currentCapsule);
-  const { title } = useStore(state => state.modelData);
+  const data = useStore(state => state.modelData);
 
   return (
     <HeaderWrapper>
       <div className="header">
-        <h1 className="heading-1">{title}</h1>
+        <h1 className="heading-1">{data?.title}</h1>
         <h5 className="subtitle-2"></h5>
       </div>
 

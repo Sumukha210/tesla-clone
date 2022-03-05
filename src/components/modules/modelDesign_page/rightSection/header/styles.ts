@@ -11,7 +11,7 @@ export const CapsuleBtnContainer = styled.div`
   margin-top: 2rem;
   display: flex;
   align-items: center;
-  background-color: rgb(244, 244, 244);
+  background-color: #eff0f2;
   border-radius: 35px;
   padding: 4px 2px;
 `;

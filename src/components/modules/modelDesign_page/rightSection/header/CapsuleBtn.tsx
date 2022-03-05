@@ -13,7 +13,7 @@ const CapsuleBtn: React.FC<capsuleBtnProps> = ({ name, isActive }) => {
   return (
     <Capsule
       onClick={changeCurrentCapsule}
-      className={`subtitle-2 ${isActive && "active"}`}>
+      className={`subtitle-3 ${isActive && "active"}`}>
       {name}
     </Capsule>
   );
@@ -37,7 +37,7 @@ const Capsule = styled.h4`
   }
 
   &:hover {
-    background-color: rgb(244, 244, 244);
+    background-color: #eff0f2;
     box-shadow: 0px 0px 5px;
   }
 

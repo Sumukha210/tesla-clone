@@ -5,11 +5,7 @@ export interface modelVersionTypes {
   name: string;
   purchasePrice: number;
   potentialSavings: number;
-  specs: [
-    { "Range (est.)": string },
-    { "Top Speed": string },
-    { "0-60 mph": string }
-  ];
+  specs: { key: string; value: string }[];
 }
 
 export interface headerProps {
