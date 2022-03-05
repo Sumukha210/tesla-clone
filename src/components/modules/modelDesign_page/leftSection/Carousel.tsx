@@ -7,6 +7,14 @@ const Carousel = () => {
   const currentModelVersion = useStore(s => s.currentModelVersion);
   const images = useStore(s => s.modelData?.images);
 
+  const imageCollections = images
+    ? [
+        currentModelVersion === "baseVersion"
+          ? Object.values(images.baseVersion)
+          : Object.values(images.plaidVersion),
+      ]
+    : null;
+
   return (
     <Wrapper>
       <CarouselContainer>

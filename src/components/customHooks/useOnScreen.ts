@@ -9,7 +9,6 @@ export const useOnScreen = (
   useIsomorphicLayoutEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
-        console.log("entries", entries);
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             setIntersecting(true);

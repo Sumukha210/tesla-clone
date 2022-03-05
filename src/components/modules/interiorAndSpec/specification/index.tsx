@@ -7,7 +7,6 @@ interface specsProps {
 }
 
 const Specs: React.FC<specsProps> = ({ specs }) => {
-  console.log("specs", specs);
   return (
     <Wrapper>
       <div className="container">
