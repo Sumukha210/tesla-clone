@@ -25,9 +25,11 @@ export type paintColorTypes =
   | "Deep Blue Metallic"
   | "Red Multi-Coat";
 
+export type interiorColorTypes = "All Black" | "Black and White" | "Cream";
+
 export interface paintTypes {
   color: paintColorTypes;
-  paintImg: imageType;
+  paintColorImg: imageType;
   price: priceType;
 }
 
@@ -36,12 +38,14 @@ export interface wheelsTypes {
   price: priceType;
   range: number;
   topSpeed?: number;
+  wheelImg: StaticImageData;
 }
 
 export interface interiorTypes {
   price: priceType;
-  color: "All Black" | "Black and White" | "Cream";
+  color: interiorColorTypes;
   decor?: "Walnut Decor" | "Ebony Decor";
+  interiorColorImg: StaticImageData;
 }
 
 export type imageType = StaticImageData;

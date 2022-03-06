@@ -1,12 +1,21 @@
 import { CarModel } from "@/utils/compareModelDetails";
-import { modelDataTypes } from "./rightSection/header/types";
+import { modelDataTypes } from "./types";
 
-// paint pallets images
+// paint pallet color images
 import blackPalletImg from "@/assets/images/paint-pallet/Paint_Black.png";
 import bluePalletImg from "@/assets/images/paint-pallet/Paint_Blue.png";
 import silverPalletImg from "@/assets/images/paint-pallet/Paint_MidnightSilver.png";
 import redPalletImg from "@/assets/images/paint-pallet/Paint_Red.png";
 import whitePalletImg from "@/assets/images/paint-pallet/Paint_White.png";
+
+// wheels images
+import wheel1Img from "@/assets/images/wheels-img/wheel1.png";
+import wheel2Img from "@/assets/images/wheels-img/wheel2.png";
+
+// interior pallet color images
+import interior_black_img from "@/assets/images/interior-pallet/Interior_Black.png";
+import interior_Cream_img from "@/assets/images/interior-pallet/Interior_Cream.png";
+import interior_white_img from "@/assets/images/interior-pallet/Interior_White.png";
 
 // base version image(white)
 import baseHero_white_img from "@/assets/images/models-page/design/compositor (1).png";
@@ -24,6 +33,41 @@ import plaidInterior_white_img from "@/assets/images/models-page/design/composit
 import baseHero_black_img from "@/assets/images/models-page/design/compositor (6).png";
 import basePaint_black_img from "@/assets/images/models-page/design/compositor (7).png";
 import baseWheels_black_img from "@/assets/images/models-page/design/compositor (8).png";
+
+// black color , with second type wheel
+import baseHero_black_wheel2_img from "@/assets/images/models-page/design/compositor (9).png";
+import basePaint_black_wheel2_img from "@/assets/images/models-page/design/compositor (10).png";
+import baseWheels_black_wheel2_img from "@/assets/images/models-page/design/compositor (11).png";
+
+// silver color image
+import baseHero_silver_img from "@/assets/images/models-page/design/compositor (12).png";
+import basePaint_silver_img from "@/assets/images/models-page/design/compositor (13).png";
+import baseWheels_silver_img from "@/assets/images/models-page/design/compositor (14).png";
+
+// silver color image, with second type wheel
+import baseHero_silver_wheel2_img from "@/assets/images/models-page/design/compositor (15).png";
+import basePaint_silver_wheel2_img from "@/assets/images/models-page/design/compositor (16).png";
+import baseWheels_silver_wheel2_img from "@/assets/images/models-page/design/compositor (17).png";
+
+// blue color image
+import baseHero_blue_img from "@/assets/images/models-page/design/compositor (21).png";
+import basePaint_blue_img from "@/assets/images/models-page/design/compositor (22).png";
+import baseWheels_blue_img from "@/assets/images/models-page/design/compositor (23).png";
+
+// blue color image, with second type wheel
+import baseHero_blue_wheel2_img from "@/assets/images/models-page/design/compositor (19).png";
+import basePaint_blue_wheel2_img from "@/assets/images/models-page/design/compositor (19).png";
+import baseWheels_blue_wheel2_img from "@/assets/images/models-page/design/compositor (20).png";
+
+// red color image
+import baseHero_red_img from "@/assets/images/models-page/design/compositor (24).png";
+import basePaint_red_img from "@/assets/images/models-page/design/compositor (25).png";
+import baseWheels_red_img from "@/assets/images/models-page/design/compositor (26).png";
+
+// red color image, with second type wheel
+import baseHero_red_wheel2_img from "@/assets/images/models-page/design/compositor (27).png";
+import basePaint_red_wheel2_img from "@/assets/images/models-page/design/compositor (28).png";
+import baseWheels_red_wheel2_img from "@/assets/images/models-page/design/compositor (29).png";
 
 export const modelData: modelDataTypes = {
   title: CarModel.MODELS,
@@ -81,26 +125,51 @@ export const modelData: modelDataTypes = {
     {
       color: "Pearl White Multi-Coat",
       price: "included",
-      paintImg: whitePalletImg,
+      paintColorImg: whitePalletImg,
     },
-    { color: "Solid Black", price: 1500, paintImg: blackPalletImg },
+    { color: "Solid Black", price: 1500, paintColorImg: blackPalletImg },
     {
       color: "Midnight Silver Metallic",
       price: 1500,
-      paintImg: silverPalletImg,
+      paintColorImg: silverPalletImg,
     },
-    { color: "Deep Blue Metallic", price: 1500, paintImg: bluePalletImg },
-    { color: "Red Multi-Coat", price: 2500, paintImg: redPalletImg },
+    { color: "Deep Blue Metallic", price: 1500, paintColorImg: bluePalletImg },
+    { color: "Red Multi-Coat", price: 2500, paintColorImg: redPalletImg },
   ],
 
   wheels: [
-    { name: `21" Arachnid Wheels`, price: 4500, range: 375 },
-    { name: `19" Tempest Wheels`, price: "included", range: 405 },
+    {
+      name: `21" Arachnid Wheels`,
+      price: 4500,
+      range: 375,
+      wheelImg: wheel1Img,
+    },
+    {
+      name: `19" Tempest Wheels`,
+      price: "included",
+      range: 405,
+      wheelImg: wheel2Img,
+    },
   ],
 
   interior: [
-    { color: "All Black", price: "included", decor: "Ebony Decor" },
-    { color: "Black and White", price: 2000, decor: "Walnut Decor" },
-    { color: "Cream", price: 2000, decor: "Walnut Decor" },
+    {
+      color: "All Black",
+      price: "included",
+      decor: "Ebony Decor",
+      interiorColorImg: interior_black_img,
+    },
+    {
+      color: "Black and White",
+      price: 2000,
+      decor: "Walnut Decor",
+      interiorColorImg: interior_white_img,
+    },
+    {
+      color: "Cream",
+      price: 2000,
+      decor: "Walnut Decor",
+      interiorColorImg: interior_Cream_img,
+    },
   ],
 };

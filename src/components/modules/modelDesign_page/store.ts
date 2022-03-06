@@ -1,6 +1,11 @@
 import create from "zustand";
 import { devtools } from "zustand/middleware";
-import { modelDataTypes, paintColorTypes } from "./rightSection/header/types";
+import {
+  carModelVersionImageType,
+  interiorColorTypes,
+  modelDataTypes,
+  paintColorTypes,
+} from "./types";
 
 type modelVersionTypes = "baseVersion" | "plaidVersion";
 type capsuleBtnTypes = "purchasePrice" | "potentialSavings";
@@ -9,12 +14,18 @@ type ModelState = {
   currentCapsule: capsuleBtnTypes;
   currentModelVersion: modelVersionTypes;
   currentPaint: paintColorTypes;
+  currentWheel: string | null;
+  currentInterior: interiorColorTypes;
   modelData: modelDataTypes | null;
+  currentImages: carModelVersionImageType | null;
 
   addModelData: (data: modelDataTypes) => void;
   changeCurrentCapsule: () => void;
   changeModelVersion: (type: modelVersionTypes) => void;
   changeCurrentPaint: (paintColor: paintColorTypes) => void;
+  changeCurrentImage: (val: carModelVersionImageType) => void;
+  changeCurrentWheel: (wheelName: string) => void;
+  changeCurrentInterior: (val: interiorColorTypes) => void;
 };
 
 const useStore = create<ModelState>(
@@ -23,6 +34,9 @@ const useStore = create<ModelState>(
     currentModelVersion: "baseVersion",
     currentPaint: "Pearl White Multi-Coat",
     modelData: null,
+    currentImages: null,
+    currentInterior: "All Black",
+    currentWheel: null,
 
     addModelData(data) {
       set(() => ({ modelData: data }));
@@ -43,6 +57,18 @@ const useStore = create<ModelState>(
 
     changeCurrentPaint(paintColor) {
       set(() => ({ currentPaint: paintColor }));
+    },
+
+    changeCurrentImage(val) {
+      set(() => ({ currentImages: val }));
+    },
+
+    changeCurrentWheel(val) {
+      set(() => ({ currentWheel: val }));
+    },
+
+    changeCurrentInterior(val) {
+      set(() => ({ currentInterior: val }));
     },
   }))
 );
