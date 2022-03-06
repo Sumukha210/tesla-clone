@@ -49,6 +49,8 @@ export interface interiorTypes {
 }
 
 export type imageType = StaticImageData;
+export type modelType = "base" | "plaid";
+export type wheelType = "firstType" | "secondType";
 
 export type carModelVersionImageType = {
   heroImg: imageType;
@@ -57,30 +59,22 @@ export type carModelVersionImageType = {
   interiorImg?: imageType;
 };
 
-export interface wheelImagesTypes extends carModelVersionImageType {
-  paintColor: paintColorTypes;
-}
-
-export interface modelImagesTypes {
-  baseVersion: carModelVersionImageType;
-  plaidVersion: carModelVersionImageType;
-  paintImages: {
-    paintColor: paintColorTypes;
-    images: carModelVersionImageType;
-  }[];
-  // interiorImages: {
-  //   name: interiorColorTypes;
-  //   images: StaticImageData;
-  // }[];
-  wheelImages: {
-    name: string;
-    images: wheelImagesTypes[];
-  }[];
+export interface displayImagesTypes {
+  modelVersion: modelType;
+  wheelType: wheelType;
+  modelPaint: paintColorTypes;
+  modelInterior: interiorColorTypes;
+  imageSrc: {
+    heroImg: imageType;
+    paintImg: imageType;
+    wheelsImg: imageType;
+    interiorImg: imageType;
+  };
 }
 
 export interface modelDataTypes extends headerProps {
   paint: paintTypes[];
   wheels: wheelsTypes[];
   interior: interiorTypes[];
-  images: modelImagesTypes;
+  images: displayImagesTypes[];
 }

@@ -4,15 +4,15 @@ import {
   carModelVersionImageType,
   interiorColorTypes,
   modelDataTypes,
+  modelType,
   paintColorTypes,
 } from "./types";
 
-type modelVersionTypes = "baseVersion" | "plaidVersion";
 type capsuleBtnTypes = "purchasePrice" | "potentialSavings";
 
 type ModelState = {
   currentCapsule: capsuleBtnTypes;
-  currentModelVersion: modelVersionTypes;
+  currentModelVersion: modelType;
   currentPaint: paintColorTypes;
   currentWheel: string | null;
   currentInterior: interiorColorTypes;
@@ -21,7 +21,7 @@ type ModelState = {
 
   addModelData: (data: modelDataTypes) => void;
   changeCurrentCapsule: () => void;
-  changeModelVersion: (type: modelVersionTypes) => void;
+  changeModelVersion: (type: modelType) => void;
   changeCurrentPaint: (paintColor: paintColorTypes) => void;
   changeCurrentImage: (val: carModelVersionImageType) => void;
   changeCurrentWheel: (wheelName: string) => void;
@@ -31,7 +31,7 @@ type ModelState = {
 const useStore = create<ModelState>(
   devtools(set => ({
     currentCapsule: "potentialSavings",
-    currentModelVersion: "baseVersion",
+    currentModelVersion: "base",
     currentPaint: "Pearl White Multi-Coat",
     modelData: null,
     currentImages: null,
@@ -39,11 +39,21 @@ const useStore = create<ModelState>(
     currentWheel: null,
 
     addModelData(data) {
-      set(() => ({
-        modelData: data,
-        currentWheel: data?.wheels[0].name,
-        currentImages: data.images.baseVersion,
-      }));
+      set((): any => {
+        const currentImageResult =
+          data.images.find(
+            ({ modelPaint, modelVersion, wheelType }) =>
+              modelPaint === "Pearl White Multi-Coat" &&
+              modelVersion === "base" &&
+              wheelType === "firstType"
+          ) || null;
+
+        return {
+          modelData: data,
+          currentWheel: data?.wheels[0].name,
+          currentImages: currentImageResult?.imageSrc,
+        };
+      });
     },
 
     changeCurrentCapsule() {
@@ -56,30 +66,29 @@ const useStore = create<ModelState>(
     },
 
     changeModelVersion(type) {
-      set(() => ({ currentModelVersion: type }));
-    },
-
-    changeCurrentPaint(paintColor) {
-      set((state): any => {
-        const result = state.modelData?.images.paintImages.find(
-          item => item.paintColor === paintColor
+      set(({ modelData, currentPaint, currentInterior }): any => {
+        const result = modelData?.images.find(
+          ({ modelVersion, modelPaint, modelInterior }) =>
+            modelVersion === type &&
+            modelPaint === currentPaint &&
+            modelInterior === currentInterior
         );
 
-        const stateResult = { currentPaint: paintColor };
+        if (result?.imageSrc) {
+          return { currentModelVersion: type, currentImages: result.imageSrc };
+        }
 
-        return result
-          ? { ...stateResult, currentImages: result.images }
-          : stateResult;
+        return { currentModelVersion: type };
       });
     },
+
+    changeCurrentPaint(paintColor) {},
 
     changeCurrentImage(val) {
       set(() => ({ currentImages: val }));
     },
 
-    changeCurrentWheel(val) {
-      set(() => ({ currentWheel: val }));
-    },
+    changeCurrentWheel(val) {},
 
     changeCurrentInterior(val) {
       set(() => ({ currentInterior: val }));

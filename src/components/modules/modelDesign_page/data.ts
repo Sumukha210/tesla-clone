@@ -1,5 +1,5 @@
 import { CarModel } from "@/utils/compareModelDetails";
-import { modelDataTypes } from "./types";
+import { displayImagesTypes, modelDataTypes } from "./types";
 
 // ****************** CONFIG IMAGES *********************************
 
@@ -32,6 +32,11 @@ import plaidHero_white_img from "@/assets/images/models-page/design/compositor (
 import plaidPaint_white_img from "@/assets/images/models-page/design/compositor (4).png";
 import plaidWheels_white_img from "@/assets/images/models-page/design/compositor (5).png";
 import plaidInterior_white_img from "@/assets/images/models-page/design/compositor (1).jpg";
+
+// white color image, with second type wheel
+import baseHero_white_wheel2_img from "@/assets/images/models-page/design/compositor (30).png";
+import basePaint_white_wheel2_img from "@/assets/images/models-page/design/compositor (31).png";
+import baseWheels_white_wheel2_img from "@/assets/images/models-page/design/compositor (32).png";
 
 // black color image
 import baseHero_black_img from "@/assets/images/models-page/design/compositor (6).png";
@@ -73,11 +78,6 @@ import baseHero_red_wheel2_img from "@/assets/images/models-page/design/composit
 import basePaint_red_wheel2_img from "@/assets/images/models-page/design/compositor (28).png";
 import baseWheels_red_wheel2_img from "@/assets/images/models-page/design/compositor (29).png";
 
-// white color image, with second type wheel
-import baseHero_white_wheel2_img from "@/assets/images/models-page/design/compositor (30).png";
-import basePaint_white_wheel2_img from "@/assets/images/models-page/design/compositor (31).png";
-import baseWheels_white_wheel2_img from "@/assets/images/models-page/design/compositor (32).png";
-
 export const modelData: modelDataTypes = {
   title: CarModel.MODELS,
   baseVersion: {
@@ -104,113 +104,150 @@ export const modelData: modelDataTypes = {
     ],
   },
 
-  images: {
-    baseVersion: {
-      heroImg: baseHero_white_img,
-      paintImg: basePaint_white_img,
-      wheelsImg: baseWheels_white_img,
-      interiorImg: baseInterior_white_img,
+  images: [
+    {
+      modelVersion: "base",
+      modelPaint: "Solid Black",
+      wheelType: "firstType",
+      modelInterior: "All Black",
+      imageSrc: {
+        heroImg: baseHero_black_img,
+        paintImg: basePaint_black_img,
+        wheelsImg: baseWheels_black_img,
+        interiorImg: baseInterior_white_img,
+      },
     },
-    plaidVersion: {
-      heroImg: plaidHero_white_img,
-      paintImg: plaidPaint_white_img,
-      wheelsImg: plaidWheels_white_img,
-      interiorImg: plaidInterior_white_img,
+
+    {
+      modelVersion: "plaid",
+      modelPaint: "Pearl White Multi-Coat",
+      wheelType: "firstType",
+      modelInterior: "All Black",
+      imageSrc: {
+        heroImg: plaidHero_white_img,
+        paintImg: plaidPaint_white_img,
+        wheelsImg: plaidWheels_white_img,
+        interiorImg: plaidInterior_white_img,
+      },
     },
-    paintImages: [
-      {
-        paintColor: "Solid Black",
-        images: {
-          heroImg: baseHero_black_img,
-          paintImg: basePaint_black_img,
-          wheelsImg: baseWheels_black_img,
-          interiorImg: baseInterior_white_img,
-        },
+
+    {
+      modelVersion: "base",
+      modelPaint: "Solid Black",
+      wheelType: "secondType",
+      modelInterior: "All Black",
+      imageSrc: {
+        heroImg: baseHero_black_wheel2_img,
+        paintImg: basePaint_black_wheel2_img,
+        wheelsImg: baseWheels_black_wheel2_img,
+        interiorImg: baseInterior_white_img,
       },
+    },
 
-      {
-        paintColor: "Midnight Silver Metallic",
-        images: {
-          heroImg: baseHero_silver_img,
-          paintImg: basePaint_silver_img,
-          wheelsImg: baseWheels_silver_img,
-          interiorImg: baseInterior_white_img,
-        },
+    {
+      modelVersion: "base",
+      modelPaint: "Deep Blue Metallic",
+      wheelType: "firstType",
+      modelInterior: "Black and White",
+      imageSrc: {
+        heroImg: baseHero_blue_img,
+        paintImg: basePaint_blue_img,
+        wheelsImg: baseWheels_blue_img,
+        interiorImg: baseInterior_white_img,
       },
+    },
 
-      {
-        paintColor: "Deep Blue Metallic",
-        images: {
-          heroImg: baseHero_blue_img,
-          paintImg: basePaint_blue_img,
-          wheelsImg: baseWheels_blue_img,
-          interiorImg: baseInterior_white_img,
-        },
+    {
+      modelVersion: "base",
+      modelPaint: "Deep Blue Metallic",
+      wheelType: "secondType",
+      modelInterior: "Black and White",
+      imageSrc: {
+        heroImg: baseHero_blue_wheel2_img,
+        paintImg: basePaint_blue_wheel2_img,
+        wheelsImg: baseWheels_blue_wheel2_img,
+        interiorImg: baseInterior_white_img,
       },
+    },
 
-      {
-        paintColor: "Pearl White Multi-Coat",
-        images: {
-          heroImg: baseHero_white_img,
-          paintImg: basePaint_white_img,
-          wheelsImg: baseWheels_white_img,
-          interiorImg: baseInterior_white_img,
-        },
+    {
+      modelVersion: "base",
+      modelPaint: "Midnight Silver Metallic",
+      wheelType: "firstType",
+      modelInterior: "Black and White",
+      imageSrc: {
+        heroImg: baseHero_silver_img,
+        paintImg: basePaint_silver_img,
+        wheelsImg: baseWheels_silver_img,
+        interiorImg: baseInterior_white_img,
       },
+    },
 
-      {
-        paintColor: "Red Multi-Coat",
-        images: {
-          heroImg: baseHero_red_img,
-          paintImg: basePaint_red_img,
-          wheelsImg: baseWheels_red_img,
-          interiorImg: baseInterior_white_img,
-        },
+    {
+      modelVersion: "base",
+      modelPaint: "Midnight Silver Metallic",
+      wheelType: "secondType",
+      modelInterior: "Black and White",
+      imageSrc: {
+        heroImg: baseHero_silver_wheel2_img,
+        paintImg: basePaint_silver_wheel2_img,
+        wheelsImg: baseWheels_silver_wheel2_img,
+        interiorImg: baseInterior_white_img,
       },
-    ],
+    },
 
-    wheelImages: [
-      {
-        name: `21" Arachnid Wheels`,
-        images: [
-          {
-            paintColor: "Deep Blue Metallic",
-            heroImg: baseHero_blue_wheel2_img,
-            paintImg: basePaint_blue_wheel2_img,
-            wheelsImg: baseWheels_blue_wheel2_img,
-          },
-
-          {
-            paintColor: "Midnight Silver Metallic",
-            heroImg: baseHero_silver_wheel2_img,
-            paintImg: basePaint_silver_wheel2_img,
-            wheelsImg: baseWheels_silver_wheel2_img,
-          },
-
-          {
-            paintColor: "Red Multi-Coat",
-            heroImg: baseHero_red_wheel2_img,
-            paintImg: basePaint_red_wheel2_img,
-            wheelsImg: baseWheels_red_wheel2_img,
-          },
-
-          {
-            paintColor: "Solid Black",
-            heroImg: baseHero_black_wheel2_img,
-            paintImg: basePaint_black_wheel2_img,
-            wheelsImg: baseWheels_black_wheel2_img,
-          },
-
-          {
-            paintColor: "Pearl White Multi-Coat",
-            heroImg: baseHero_white_wheel2_img,
-            paintImg: basePaint_white_wheel2_img,
-            wheelsImg: baseWheels_white_wheel2_img,
-          },
-        ],
+    {
+      modelVersion: "base",
+      modelPaint: "Pearl White Multi-Coat",
+      wheelType: "firstType",
+      modelInterior: "Black and White",
+      imageSrc: {
+        heroImg: baseHero_white_img,
+        paintImg: basePaint_white_img,
+        wheelsImg: baseWheels_white_img,
+        interiorImg: baseInterior_white_img,
       },
-    ],
-  },
+    },
+
+    {
+      modelVersion: "base",
+      modelPaint: "Pearl White Multi-Coat",
+      wheelType: "secondType",
+      modelInterior: "Black and White",
+      imageSrc: {
+        heroImg: baseHero_white_wheel2_img,
+        paintImg: basePaint_white_wheel2_img,
+        wheelsImg: baseWheels_white_wheel2_img,
+        interiorImg: baseInterior_white_img,
+      },
+    },
+
+    {
+      modelVersion: "base",
+      modelPaint: "Red Multi-Coat",
+      wheelType: "firstType",
+      modelInterior: "Black and White",
+      imageSrc: {
+        heroImg: baseHero_red_img,
+        paintImg: basePaint_red_img,
+        wheelsImg: baseWheels_red_img,
+        interiorImg: baseInterior_white_img,
+      },
+    },
+
+    {
+      modelVersion: "base",
+      modelPaint: "Red Multi-Coat",
+      wheelType: "secondType",
+      modelInterior: "Black and White",
+      imageSrc: {
+        heroImg: baseHero_red_wheel2_img,
+        paintImg: basePaint_red_wheel2_img,
+        wheelsImg: baseWheels_red_wheel2_img,
+        interiorImg: baseInterior_white_img,
+      },
+    },
+  ],
 
   paint: [
     {
@@ -233,14 +270,14 @@ export const modelData: modelDataTypes = {
       name: `19" Tempest Wheels`,
       price: "included",
       range: 405,
-      wheelImg: wheel2Img,
+      wheelImg: wheel1Img,
     },
 
     {
       name: `21" Arachnid Wheels`,
       price: 4500,
       range: 375,
-      wheelImg: wheel1Img,
+      wheelImg: wheel2Img,
     },
   ],
 

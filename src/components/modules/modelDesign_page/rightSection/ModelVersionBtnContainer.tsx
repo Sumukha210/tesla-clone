@@ -14,8 +14,8 @@ const ModelVersionBtnContainer = () => {
       <div>
         <h3 className="subtitle-2">Dual Motor All-Wheel Drive</h3>
         <Button
-          onClick={() => changeCurrentModelVersion("baseVersion")}
-          className={`${currentModelVersion === "baseVersion" && "active"}`}>
+          onClick={() => changeCurrentModelVersion("base")}
+          className={`${currentModelVersion === "base" && "active"}`}>
           <span>{data?.baseVersion.name}</span>
           <span>{formatAmount(data?.baseVersion[currentCapsule] || 0)}</span>
         </Button>
@@ -24,8 +24,8 @@ const ModelVersionBtnContainer = () => {
       <div>
         <h3 className="subtitle-2">Tri Motor All-Wheel Drive</h3>
         <Button
-          onClick={() => changeCurrentModelVersion("plaidVersion")}
-          className={`${currentModelVersion === "plaidVersion" && "active"}`}>
+          onClick={() => changeCurrentModelVersion("plaid")}
+          className={`${currentModelVersion === "plaid" && "active"}`}>
           <span>{data?.plaidVersion.name}</span>
           <span>{formatAmount(data?.plaidVersion[currentCapsule] || 0)}</span>
         </Button>
