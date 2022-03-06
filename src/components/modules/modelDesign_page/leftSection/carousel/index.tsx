@@ -5,7 +5,12 @@ import {
   MdOutlineKeyboardArrowRight,
   MdOutlineKeyboardArrowLeft,
 } from "react-icons/md";
-import { Wrapper, ImageContainer, CarouselContainer } from "./styles";
+import {
+  Wrapper,
+  ImageContainer,
+  CarouselContainer,
+  PlainImageContainer,
+} from "./styles";
 
 const Carousel = () => {
   const [currentImgNum, setCurrentImgNum] = useState(0);
@@ -39,19 +44,32 @@ const Carousel = () => {
   return (
     <Wrapper>
       {imageCollections?.length && (
-        <CarouselContainer>
-          <ImageContainer>
-            <NextImg src={imageCollections[currentImgNum]} objectFit="cover" />
-          </ImageContainer>
+        <>
+          <PlainImageContainer>
+            <NextImg
+              src={imageCollections[currentImgNum]}
+              objectFit="cover"
+              placeholder="blur"
+            />
+          </PlainImageContainer>
 
-          <div className="nextArrow">
-            <MdOutlineKeyboardArrowRight onClick={handleNextArrow} />
-          </div>
+          <CarouselContainer>
+            <ImageContainer>
+              <NextImg
+                src={imageCollections[currentImgNum]}
+                objectFit="cover"
+              />
+            </ImageContainer>
 
-          <div className="prevArrow">
-            <MdOutlineKeyboardArrowLeft onClick={handlePrevArrow} />
-          </div>
-        </CarouselContainer>
+            <div className="nextArrow">
+              <MdOutlineKeyboardArrowRight onClick={handleNextArrow} />
+            </div>
+
+            <div className="prevArrow">
+              <MdOutlineKeyboardArrowLeft onClick={handlePrevArrow} />
+            </div>
+          </CarouselContainer>
+        </>
       )}
     </Wrapper>
   );

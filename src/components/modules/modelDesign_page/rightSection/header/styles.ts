@@ -10,6 +10,13 @@ export const HeaderWrapper = styled.div`
       color: #5c5e62;
     }
   }
+
+  @media (max-width: 1199.98px) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    max-width: 768px;
+    margin: auto;
+  }
 `;
 
 export const CapsuleBtnContainer = styled.div`

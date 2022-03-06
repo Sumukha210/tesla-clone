@@ -1,17 +1,17 @@
 import { BgImg } from "@/module/heroTemplate/styles";
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div``;
+
+export const CarouselContainer = styled.div`
+  max-width: 100%;
+  position: relative;
+
   display: none;
 
   @media (min-width: 1200px) {
     display: block;
   }
-`;
-
-export const CarouselContainer = styled.div`
-  max-width: 100%;
-  position: relative;
 
   .nextArrow,
   .prevArrow {
@@ -42,3 +42,11 @@ export const CarouselContainer = styled.div`
 `;
 
 export const ImageContainer = styled(BgImg)``;
+
+export const PlainImageContainer = styled(BgImg)`
+  @media (min-width: 1200px) {
+    display: none;
+  }
+
+  display: block;
+`;

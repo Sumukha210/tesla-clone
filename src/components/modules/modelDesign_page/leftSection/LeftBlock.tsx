@@ -14,4 +14,8 @@ export default LeftBlock;
 
 const LeftSection = styled.div`
   align-self: center;
+
+  @media (max-width: 1199.98px) {
+    margin-top: 5rem;
+  }
 `;

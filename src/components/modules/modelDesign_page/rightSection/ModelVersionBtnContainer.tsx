@@ -37,13 +37,20 @@ const ModelVersionBtnContainer = () => {
 export default ModelVersionBtnContainer;
 
 const Wrapper = styled.div`
-  margin-top: 2rem;
+  margin-top: 3rem !important;
+
+  @media (max-width: 1199.98px) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    max-width: 768px;
+    margin: auto;
+  }
 
   & > div {
     h3 {
       color: #5c5e62;
       font-weight: 500;
-      margin: 2rem 0 6px 0;
+      margin: 1.5rem 0 6px 0;
     }
   }
 `;
