@@ -1,6 +1,13 @@
 import { CarModel } from "@/utils/compareModelDetails";
 import { modelDataTypes } from "./rightSection/header/types";
 
+// paint pallets images
+import blackPalletImg from "@/assets/images/paint-pallet/Paint_Black.png";
+import bluePalletImg from "@/assets/images/paint-pallet/Paint_Blue.png";
+import silverPalletImg from "@/assets/images/paint-pallet/Paint_MidnightSilver.png";
+import redPalletImg from "@/assets/images/paint-pallet/Paint_Red.png";
+import whitePalletImg from "@/assets/images/paint-pallet/Paint_White.png";
+
 // base version image(white)
 import baseHero_white_img from "@/assets/images/models-page/design/compositor (1).png";
 import basePaint_white_img from "@/assets/images/models-page/design/compositor (2).png";
@@ -12,6 +19,11 @@ import plaidHero_white_img from "@/assets/images/models-page/design/compositor (
 import plaidPaint_white_img from "@/assets/images/models-page/design/compositor (4).png";
 import plaidWheels_white_img from "@/assets/images/models-page/design/compositor (5).png";
 import plaidInterior_white_img from "@/assets/images/models-page/design/compositor (1).jpg";
+
+// black color image
+import baseHero_black_img from "@/assets/images/models-page/design/compositor (6).png";
+import basePaint_black_img from "@/assets/images/models-page/design/compositor (7).png";
+import baseWheels_black_img from "@/assets/images/models-page/design/compositor (8).png";
 
 export const modelData: modelDataTypes = {
   title: CarModel.MODELS,
@@ -52,14 +64,33 @@ export const modelData: modelDataTypes = {
       wheelsImg: plaidWheels_white_img,
       interiorImg: plaidInterior_white_img,
     },
+    paintImages: [
+      {
+        paintColor: "Solid Black",
+        images: {
+          heroImg: baseHero_black_img,
+          paintImg: basePaint_black_img,
+          wheelsImg: baseWheels_black_img,
+          interiorImg: baseInterior_white_img,
+        },
+      },
+    ],
   },
 
   paint: [
-    { color: "Pearl White Multi-Coat", price: "included" },
-    { color: "Solid Black", price: 1500 },
-    { color: "Midnight Silver Metallic", price: 1500 },
-    { color: "Deep Blue Metallic", price: 1500 },
-    { color: "Red Multi-Coat", price: 2500 },
+    {
+      color: "Pearl White Multi-Coat",
+      price: "included",
+      paintImg: whitePalletImg,
+    },
+    { color: "Solid Black", price: 1500, paintImg: blackPalletImg },
+    {
+      color: "Midnight Silver Metallic",
+      price: 1500,
+      paintImg: silverPalletImg,
+    },
+    { color: "Deep Blue Metallic", price: 1500, paintImg: bluePalletImg },
+    { color: "Red Multi-Coat", price: 2500, paintImg: redPalletImg },
   ],
 
   wheels: [

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Header from "./header";
 import ModelVersionBtnContainer from "./ModelVersionBtnContainer";
+import PaintBlock from "./PaintBlock";
 import SpecBlock from "./SpecBlock";
 
 const RightBlock = () => {
@@ -10,6 +11,7 @@ const RightBlock = () => {
       <Header />
       <SpecBlock />
       <ModelVersionBtnContainer />
+      <PaintBlock />
     </RightSection>
   );
 };

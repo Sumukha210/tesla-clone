@@ -18,14 +18,16 @@ export interface headerProps {
 
 export type priceType = number | "included";
 
-export interface paintTypes {
-  color:
-    | "Pearl White Multi-Coat"
-    | "Solid Black"
-    | "Midnight Silver Metallic"
-    | "Deep Blue Metallic"
-    | "Red Multi-Coat";
+export type paintColorTypes =
+  | "Pearl White Multi-Coat"
+  | "Solid Black"
+  | "Midnight Silver Metallic"
+  | "Deep Blue Metallic"
+  | "Red Multi-Coat";
 
+export interface paintTypes {
+  color: paintColorTypes;
+  paintImg: imageType;
   price: priceType;
 }
 
@@ -54,6 +56,10 @@ export type carModelVersionImageType = {
 export interface modelImagesTypes {
   baseVersion: carModelVersionImageType;
   plaidVersion: carModelVersionImageType;
+  paintImages: {
+    paintColor: paintColorTypes;
+    images: carModelVersionImageType;
+  }[];
 }
 
 export interface modelDataTypes extends headerProps {
