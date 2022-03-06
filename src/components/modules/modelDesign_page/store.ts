@@ -39,7 +39,11 @@ const useStore = create<ModelState>(
     currentWheel: null,
 
     addModelData(data) {
-      set(() => ({ modelData: data }));
+      set(() => ({
+        modelData: data,
+        currentWheel: data?.wheels[0].name,
+        currentImages: data.images.baseVersion,
+      }));
     },
 
     changeCurrentCapsule() {

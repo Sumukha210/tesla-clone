@@ -14,16 +14,8 @@ import {
 
 const Carousel = () => {
   const [currentImgNum, setCurrentImgNum] = useState(0);
-  const currentModelVersion = useStore(s => s.currentModelVersion);
-  const images = useStore(s => s.modelData?.images);
-
-  const imageCollections = images
-    ? [
-        ...(currentModelVersion === "baseVersion"
-          ? Object.values(images.baseVersion)
-          : Object.values(images.plaidVersion)),
-      ]
-    : [];
+  const currentImages = useStore(s => s.currentImages);
+  const imageCollections = currentImages ? Object.values(currentImages) : [];
 
   const handleNextArrow = () => {
     if (currentImgNum >= imageCollections.length - 1) {

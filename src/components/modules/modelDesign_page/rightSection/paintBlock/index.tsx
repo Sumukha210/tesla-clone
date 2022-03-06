@@ -8,15 +8,16 @@ const PaintBlock = () => {
   const modelData = useStore(s => s.modelData);
   const currentPaint = useStore(s => s.currentPaint);
   const changeCurrentPaint = useStore(s => s.changeCurrentPaint);
+  const currentImage = useStore(s => s.currentImages);
 
   return (
     <Wrapper>
       <h2 className="heading-2">Paint</h2>
 
-      {modelData && (
+      {currentImage && (
         <HeroImageContainer>
           <NextImg
-            src={modelData?.images.paintImages[0].images.heroImg}
+            src={currentImage?.paintImg}
             objectFit="cover"
             placeholder="blur"
           />
@@ -33,7 +34,7 @@ const PaintBlock = () => {
               <NextImg
                 className="active"
                 objectFit="cover"
-                src={item.paintImg}
+                src={item.paintColorImg}
               />
             </Pallet>
           ))}
