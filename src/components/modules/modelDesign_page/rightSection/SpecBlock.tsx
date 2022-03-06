@@ -9,7 +9,7 @@ const SpecBlock = () => {
 
   const specs = data
     ? [
-        ...(modelVersion === "baseVersion"
+        ...(modelVersion === "base"
           ? data.baseVersion.specs
           : data.plaidVersion.specs),
       ]
