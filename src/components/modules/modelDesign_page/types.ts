@@ -54,8 +54,12 @@ export type carModelVersionImageType = {
   heroImg: imageType;
   paintImg: imageType;
   wheelsImg: imageType;
-  interiorImg: imageType;
+  interiorImg?: imageType;
 };
+
+export interface wheelImagesTypes extends carModelVersionImageType {
+  paintColor: paintColorTypes;
+}
 
 export interface modelImagesTypes {
   baseVersion: carModelVersionImageType;
@@ -63,6 +67,14 @@ export interface modelImagesTypes {
   paintImages: {
     paintColor: paintColorTypes;
     images: carModelVersionImageType;
+  }[];
+  // interiorImages: {
+  //   name: interiorColorTypes;
+  //   images: StaticImageData;
+  // }[];
+  wheelImages: {
+    name: string;
+    images: wheelImagesTypes[];
   }[];
 }
 

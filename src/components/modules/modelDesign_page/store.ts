@@ -60,7 +60,17 @@ const useStore = create<ModelState>(
     },
 
     changeCurrentPaint(paintColor) {
-      set(() => ({ currentPaint: paintColor }));
+      set((state): any => {
+        const result = state.modelData?.images.paintImages.find(
+          item => item.paintColor === paintColor
+        );
+
+        const stateResult = { currentPaint: paintColor };
+
+        return result
+          ? { ...stateResult, currentImages: result.images }
+          : stateResult;
+      });
     },
 
     changeCurrentImage(val) {

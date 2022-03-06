@@ -1,6 +1,8 @@
 import { CarModel } from "@/utils/compareModelDetails";
 import { modelDataTypes } from "./types";
 
+// ****************** CONFIG IMAGES *********************************
+
 // paint pallet color images
 import blackPalletImg from "@/assets/images/paint-pallet/Paint_Black.png";
 import bluePalletImg from "@/assets/images/paint-pallet/Paint_Blue.png";
@@ -16,6 +18,8 @@ import wheel2Img from "@/assets/images/wheels-img/wheel2.png";
 import interior_black_img from "@/assets/images/interior-pallet/Interior_Black.png";
 import interior_Cream_img from "@/assets/images/interior-pallet/Interior_Cream.png";
 import interior_white_img from "@/assets/images/interior-pallet/Interior_White.png";
+
+// ************** CAR IMAGES  *************************************
 
 // base version image(white)
 import baseHero_white_img from "@/assets/images/models-page/design/compositor (1).png";
@@ -69,6 +73,11 @@ import baseHero_red_wheel2_img from "@/assets/images/models-page/design/composit
 import basePaint_red_wheel2_img from "@/assets/images/models-page/design/compositor (28).png";
 import baseWheels_red_wheel2_img from "@/assets/images/models-page/design/compositor (29).png";
 
+// white color image, with second type wheel
+import baseHero_white_wheel2_img from "@/assets/images/models-page/design/compositor (30).png";
+import basePaint_white_wheel2_img from "@/assets/images/models-page/design/compositor (31).png";
+import baseWheels_white_wheel2_img from "@/assets/images/models-page/design/compositor (32).png";
+
 export const modelData: modelDataTypes = {
   title: CarModel.MODELS,
   baseVersion: {
@@ -117,6 +126,88 @@ export const modelData: modelDataTypes = {
           wheelsImg: baseWheels_black_img,
           interiorImg: baseInterior_white_img,
         },
+      },
+
+      {
+        paintColor: "Midnight Silver Metallic",
+        images: {
+          heroImg: baseHero_silver_img,
+          paintImg: basePaint_silver_img,
+          wheelsImg: baseWheels_silver_img,
+          interiorImg: baseInterior_white_img,
+        },
+      },
+
+      {
+        paintColor: "Deep Blue Metallic",
+        images: {
+          heroImg: baseHero_blue_img,
+          paintImg: basePaint_blue_img,
+          wheelsImg: baseWheels_blue_img,
+          interiorImg: baseInterior_white_img,
+        },
+      },
+
+      {
+        paintColor: "Pearl White Multi-Coat",
+        images: {
+          heroImg: baseHero_white_img,
+          paintImg: basePaint_white_img,
+          wheelsImg: baseWheels_white_img,
+          interiorImg: baseInterior_white_img,
+        },
+      },
+
+      {
+        paintColor: "Red Multi-Coat",
+        images: {
+          heroImg: baseHero_red_img,
+          paintImg: basePaint_red_img,
+          wheelsImg: baseWheels_red_img,
+          interiorImg: baseInterior_white_img,
+        },
+      },
+    ],
+
+    wheelImages: [
+      {
+        name: `21" Arachnid Wheels`,
+        images: [
+          {
+            paintColor: "Deep Blue Metallic",
+            heroImg: baseHero_blue_wheel2_img,
+            paintImg: basePaint_blue_wheel2_img,
+            wheelsImg: baseWheels_blue_wheel2_img,
+          },
+
+          {
+            paintColor: "Midnight Silver Metallic",
+            heroImg: baseHero_silver_wheel2_img,
+            paintImg: basePaint_silver_wheel2_img,
+            wheelsImg: baseWheels_silver_wheel2_img,
+          },
+
+          {
+            paintColor: "Red Multi-Coat",
+            heroImg: baseHero_red_wheel2_img,
+            paintImg: basePaint_red_wheel2_img,
+            wheelsImg: baseWheels_red_wheel2_img,
+          },
+
+          {
+            paintColor: "Solid Black",
+            heroImg: baseHero_black_wheel2_img,
+            paintImg: basePaint_black_wheel2_img,
+            wheelsImg: baseWheels_black_wheel2_img,
+          },
+
+          {
+            paintColor: "Pearl White Multi-Coat",
+            heroImg: baseHero_white_wheel2_img,
+            paintImg: basePaint_white_wheel2_img,
+            wheelsImg: baseWheels_white_wheel2_img,
+          },
+        ],
       },
     ],
   },

@@ -4,6 +4,10 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   margin-top: 3rem;
 
+  @media (min-width: 1200px) {
+    margin: 5rem 0;
+  }
+
   h2 {
     text-align: center;
     margin-bottom: 1.5rem;
@@ -58,4 +62,8 @@ export const Pallet = styled.div`
   }
 `;
 
-export const HeroImageContainer = styled(BgImg)``;
+export const HeroImageContainer = styled(BgImg)`
+  @media (min-width: 1200px) {
+    display: none;
+  }
+`;
