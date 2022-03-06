@@ -9,7 +9,7 @@ const Header: React.FC = () => {
   const currentModelVersion = useStore(s => s.currentModelVersion);
 
   const estimatedDelivery =
-    currentModelVersion === "baseVersion"
+    currentModelVersion === "base"
       ? data?.baseVersion.estimatedDelivery
       : data?.plaidVersion.estimatedDelivery;
 
