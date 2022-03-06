@@ -34,7 +34,7 @@ export interface paintTypes {
 }
 
 export interface wheelsTypes {
-  name: string;
+  name: wheelType;
   price: priceType;
   range: number;
   topSpeed?: number;

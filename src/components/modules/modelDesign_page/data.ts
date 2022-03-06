@@ -267,14 +267,14 @@ export const modelData: modelDataTypes = {
 
   wheels: [
     {
-      name: `19" Tempest Wheels`,
+      name: `firstType`,
       price: "included",
       range: 405,
       wheelImg: wheel1Img,
     },
 
     {
-      name: `21" Arachnid Wheels`,
+      name: `secondType`,
       price: 4500,
       range: 375,
       wheelImg: wheel2Img,

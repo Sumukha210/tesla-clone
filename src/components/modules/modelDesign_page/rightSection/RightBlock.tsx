@@ -12,8 +12,8 @@ const RightBlock = () => {
       <Header />
       <SpecBlock />
       <ModelVersionBtnContainer />
-      {/* <PaintBlock />
-      <WheelBlock /> */}
+      <PaintBlock />
+      <WheelBlock />
     </RightSection>
   );
 };

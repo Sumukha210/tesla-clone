@@ -6,6 +6,7 @@ import {
   modelDataTypes,
   modelType,
   paintColorTypes,
+  wheelType,
 } from "./types";
 
 type capsuleBtnTypes = "purchasePrice" | "potentialSavings";
@@ -14,7 +15,7 @@ type ModelState = {
   currentCapsule: capsuleBtnTypes;
   currentModelVersion: modelType;
   currentPaint: paintColorTypes;
-  currentWheel: string | null;
+  currentWheel: wheelType;
   currentInterior: interiorColorTypes;
   modelData: modelDataTypes | null;
   currentImages: carModelVersionImageType | null;
@@ -24,7 +25,7 @@ type ModelState = {
   changeModelVersion: (type: modelType) => void;
   changeCurrentPaint: (paintColor: paintColorTypes) => void;
   changeCurrentImage: (val: carModelVersionImageType) => void;
-  changeCurrentWheel: (wheelName: string) => void;
+  changeCurrentWheel: (wheelName: wheelType) => void;
   changeCurrentInterior: (val: interiorColorTypes) => void;
 };
 
@@ -36,7 +37,7 @@ const useStore = create<ModelState>(
     modelData: null,
     currentImages: null,
     currentInterior: "All Black",
-    currentWheel: null,
+    currentWheel: "firstType",
 
     addModelData(data) {
       set((): any => {
@@ -50,7 +51,6 @@ const useStore = create<ModelState>(
 
         return {
           modelData: data,
-          currentWheel: data?.wheels[0].name,
           currentImages: currentImageResult?.imageSrc,
         };
       });
@@ -66,12 +66,13 @@ const useStore = create<ModelState>(
     },
 
     changeModelVersion(type) {
-      set(({ modelData, currentPaint, currentInterior }): any => {
+      set(({ modelData, currentPaint, currentInterior, currentWheel }): any => {
         const result = modelData?.images.find(
-          ({ modelVersion, modelPaint, modelInterior }) =>
+          ({ modelVersion, modelPaint, modelInterior, wheelType }) =>
             modelVersion === type &&
             modelPaint === currentPaint &&
-            modelInterior === currentInterior
+            modelInterior === currentInterior &&
+            wheelType === currentWheel
         );
 
         if (result?.imageSrc) {
@@ -82,13 +83,59 @@ const useStore = create<ModelState>(
       });
     },
 
-    changeCurrentPaint(paintColor) {},
+    changeCurrentPaint(paintColor) {
+      set(
+        ({
+          modelData,
+          currentInterior,
+          currentModelVersion,
+          currentWheel,
+        }): any => {
+          const result = modelData?.images.find(
+            ({ modelInterior, modelPaint, modelVersion, wheelType }) =>
+              modelPaint === paintColor &&
+              modelVersion === currentModelVersion &&
+              wheelType === currentWheel
+            // modelInterior === currentInterior &&
+          );
+
+          if (result?.imageSrc) {
+            return { currentPaint: paintColor, currentImages: result.imageSrc };
+          }
+
+          return { currentPaint: paintColor };
+        }
+      );
+    },
 
     changeCurrentImage(val) {
       set(() => ({ currentImages: val }));
     },
 
-    changeCurrentWheel(val) {},
+    changeCurrentWheel(val) {
+      set(
+        ({
+          modelData,
+          currentInterior,
+          currentModelVersion,
+          currentPaint,
+        }): any => {
+          const result = modelData?.images.find(
+            ({ modelInterior, modelPaint, modelVersion, wheelType }) =>
+              wheelType === val &&
+              modelPaint === currentPaint &&
+              modelVersion === currentModelVersion
+            // modelInterior === currentInterior &&
+          );
+
+          if (result?.imageSrc) {
+            return { currentWheel: val, currentImages: result.imageSrc };
+          }
+
+          return { currentWheel: val };
+        }
+      );
+    },
 
     changeCurrentInterior(val) {
       set(() => ({ currentInterior: val }));

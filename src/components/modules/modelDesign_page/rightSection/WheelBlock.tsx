@@ -49,7 +49,11 @@ const WheelBlock = () => {
 
         <div className="palletDetails">
           <h4 className="subtitle-2">
-            <span>{currentWheel}</span>
+            <span>
+              {currentWheel === "firstType"
+                ? `19" Tempest Wheels`
+                : `21" Arachnid Wheels`}
+            </span>
             <span>
               {modelData?.wheels.map(item =>
                 item.name === currentWheel
