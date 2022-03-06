@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import Header from "./header";
 import ModelVersionBtnContainer from "./ModelVersionBtnContainer";
-import PaintBlock from "./paintBlock";
+import PaintBlock from "./PaintBlock";
 import SpecBlock from "./SpecBlock";
+import WheelBlock from "./WheelBlock";
 
 const RightBlock = () => {
   return (
@@ -12,6 +13,7 @@ const RightBlock = () => {
       <SpecBlock />
       <ModelVersionBtnContainer />
       <PaintBlock />
+      <WheelBlock />
     </RightSection>
   );
 };

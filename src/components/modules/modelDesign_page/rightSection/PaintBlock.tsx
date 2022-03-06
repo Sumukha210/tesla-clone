@@ -1,8 +1,13 @@
 import React from "react";
-import useStore from "../../store";
+import useStore from "../store";
 import NextImg from "next/image";
 import { formatAmount } from "@/utils/formatAmount";
-import { Wrapper, PalletContainer, Pallet, HeroImageContainer } from "./styles";
+import {
+  Wrapper,
+  PalletContainer,
+  Pallet,
+  HeroImageContainer,
+} from "./specificBlockStyles";
 
 const PaintBlock = () => {
   const modelData = useStore(s => s.modelData);
@@ -12,8 +17,6 @@ const PaintBlock = () => {
 
   return (
     <Wrapper>
-      <h2 className="heading-2">Paint</h2>
-
       {currentImage && (
         <HeroImageContainer>
           <NextImg
@@ -23,6 +26,8 @@ const PaintBlock = () => {
           />
         </HeroImageContainer>
       )}
+
+      <h2 className="heading-2">Paint</h2>
 
       <PalletContainer>
         <div className="palletImages">
