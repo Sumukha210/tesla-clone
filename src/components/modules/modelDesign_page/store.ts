@@ -84,28 +84,21 @@ const useStore = create<ModelState>(
     },
 
     changeCurrentPaint(paintColor) {
-      set(
-        ({
-          modelData,
-          currentInterior,
-          currentModelVersion,
-          currentWheel,
-        }): any => {
-          const result = modelData?.images.find(
-            ({ modelInterior, modelPaint, modelVersion, wheelType }) =>
-              modelPaint === paintColor &&
-              modelVersion === currentModelVersion &&
-              wheelType === currentWheel
-            // modelInterior === currentInterior &&
-          );
+      set(({ modelData, currentModelVersion, currentWheel }): any => {
+        const result = modelData?.images.find(
+          ({ modelPaint, modelVersion, wheelType }) =>
+            modelPaint === paintColor &&
+            modelVersion === currentModelVersion &&
+            wheelType === currentWheel
+          // modelInterior === currentInterior &&
+        );
 
-          if (result?.imageSrc) {
-            return { currentPaint: paintColor, currentImages: result.imageSrc };
-          }
-
-          return { currentPaint: paintColor };
+        if (result?.imageSrc) {
+          return { currentPaint: paintColor, currentImages: result.imageSrc };
         }
-      );
+
+        return { currentPaint: paintColor };
+      });
     },
 
     changeCurrentImage(val) {
@@ -113,28 +106,20 @@ const useStore = create<ModelState>(
     },
 
     changeCurrentWheel(val) {
-      set(
-        ({
-          modelData,
-          currentInterior,
-          currentModelVersion,
-          currentPaint,
-        }): any => {
-          const result = modelData?.images.find(
-            ({ modelInterior, modelPaint, modelVersion, wheelType }) =>
-              wheelType === val &&
-              modelPaint === currentPaint &&
-              modelVersion === currentModelVersion
-            // modelInterior === currentInterior &&
-          );
+      set(({ modelData, currentModelVersion, currentPaint }): any => {
+        const result = modelData?.images.find(
+          ({ modelPaint, modelVersion, wheelType }) =>
+            wheelType === val &&
+            modelPaint === currentPaint &&
+            modelVersion === currentModelVersion
+        );
 
-          if (result?.imageSrc) {
-            return { currentWheel: val, currentImages: result.imageSrc };
-          }
-
-          return { currentWheel: val };
+        if (result?.imageSrc) {
+          return { currentWheel: val, currentImages: result.imageSrc };
         }
-      );
+
+        return { currentWheel: val };
+      });
     },
 
     changeCurrentInterior(val) {

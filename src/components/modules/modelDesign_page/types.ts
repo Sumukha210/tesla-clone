@@ -56,7 +56,6 @@ export type carModelVersionImageType = {
   heroImg: imageType;
   paintImg: imageType;
   wheelsImg: imageType;
-  interiorImg?: imageType;
 };
 
 export interface displayImagesTypes {
@@ -64,12 +63,12 @@ export interface displayImagesTypes {
   wheelType: wheelType;
   modelPaint: paintColorTypes;
   modelInterior: interiorColorTypes;
-  imageSrc: {
-    heroImg: imageType;
-    paintImg: imageType;
-    wheelsImg: imageType;
-    interiorImg: imageType;
-  };
+  imageSrc: carModelVersionImageType;
+}
+
+export interface displayInteriorImagesTypes {
+  interiorColor: interiorColorTypes;
+  imgSrc: StaticImageData;
 }
 
 export interface modelDataTypes extends headerProps {
@@ -77,4 +76,5 @@ export interface modelDataTypes extends headerProps {
   wheels: wheelsTypes[];
   interior: interiorTypes[];
   images: displayImagesTypes[];
+  interiorImages: displayInteriorImagesTypes[];
 }

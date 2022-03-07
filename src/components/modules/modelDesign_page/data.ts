@@ -1,5 +1,5 @@
 import { CarModel } from "@/utils/compareModelDetails";
-import { displayImagesTypes, modelDataTypes } from "./types";
+import { modelDataTypes } from "./types";
 
 // ****************** CONFIG IMAGES *********************************
 
@@ -25,13 +25,11 @@ import interior_white_img from "@/assets/images/interior-pallet/Interior_White.p
 import baseHero_white_img from "@/assets/images/models-page/design/compositor (1).png";
 import basePaint_white_img from "@/assets/images/models-page/design/compositor (2).png";
 import baseWheels_white_img from "@/assets/images/models-page/design/compositor.png";
-import baseInterior_white_img from "@/assets/images/models-page/design/compositor.jpg";
 
 // plaid version image(white)
 import plaidHero_white_img from "@/assets/images/models-page/design/compositor (3).png";
 import plaidPaint_white_img from "@/assets/images/models-page/design/compositor (4).png";
 import plaidWheels_white_img from "@/assets/images/models-page/design/compositor (5).png";
-import plaidInterior_white_img from "@/assets/images/models-page/design/compositor (1).jpg";
 
 // white color image, with second type wheel
 import baseHero_white_wheel2_img from "@/assets/images/models-page/design/compositor (30).png";
@@ -78,6 +76,12 @@ import baseHero_red_wheel2_img from "@/assets/images/models-page/design/composit
 import basePaint_red_wheel2_img from "@/assets/images/models-page/design/compositor (28).png";
 import baseWheels_red_wheel2_img from "@/assets/images/models-page/design/compositor (29).png";
 
+// ************************ CAR INTERIOR IMAGES **************************
+
+import interiorImage_black from "@/assets/images/models-page/design/compositor (4).jpg";
+import interiorImage_white from "@/assets/images/models-page/design/compositor (3).jpg";
+import interiorImage_cream from "@/assets/images/models-page/design/compositor (5).jpg";
+
 export const modelData: modelDataTypes = {
   title: CarModel.MODELS,
   baseVersion: {
@@ -114,7 +118,6 @@ export const modelData: modelDataTypes = {
         heroImg: baseHero_black_img,
         paintImg: basePaint_black_img,
         wheelsImg: baseWheels_black_img,
-        interiorImg: baseInterior_white_img,
       },
     },
 
@@ -127,7 +130,6 @@ export const modelData: modelDataTypes = {
         heroImg: plaidHero_white_img,
         paintImg: plaidPaint_white_img,
         wheelsImg: plaidWheels_white_img,
-        interiorImg: plaidInterior_white_img,
       },
     },
 
@@ -140,7 +142,6 @@ export const modelData: modelDataTypes = {
         heroImg: baseHero_black_wheel2_img,
         paintImg: basePaint_black_wheel2_img,
         wheelsImg: baseWheels_black_wheel2_img,
-        interiorImg: baseInterior_white_img,
       },
     },
 
@@ -153,7 +154,6 @@ export const modelData: modelDataTypes = {
         heroImg: baseHero_blue_img,
         paintImg: basePaint_blue_img,
         wheelsImg: baseWheels_blue_img,
-        interiorImg: baseInterior_white_img,
       },
     },
 
@@ -166,7 +166,6 @@ export const modelData: modelDataTypes = {
         heroImg: baseHero_blue_wheel2_img,
         paintImg: basePaint_blue_wheel2_img,
         wheelsImg: baseWheels_blue_wheel2_img,
-        interiorImg: baseInterior_white_img,
       },
     },
 
@@ -179,7 +178,6 @@ export const modelData: modelDataTypes = {
         heroImg: baseHero_silver_img,
         paintImg: basePaint_silver_img,
         wheelsImg: baseWheels_silver_img,
-        interiorImg: baseInterior_white_img,
       },
     },
 
@@ -192,7 +190,6 @@ export const modelData: modelDataTypes = {
         heroImg: baseHero_silver_wheel2_img,
         paintImg: basePaint_silver_wheel2_img,
         wheelsImg: baseWheels_silver_wheel2_img,
-        interiorImg: baseInterior_white_img,
       },
     },
 
@@ -205,7 +202,6 @@ export const modelData: modelDataTypes = {
         heroImg: baseHero_white_img,
         paintImg: basePaint_white_img,
         wheelsImg: baseWheels_white_img,
-        interiorImg: baseInterior_white_img,
       },
     },
 
@@ -218,7 +214,6 @@ export const modelData: modelDataTypes = {
         heroImg: baseHero_white_wheel2_img,
         paintImg: basePaint_white_wheel2_img,
         wheelsImg: baseWheels_white_wheel2_img,
-        interiorImg: baseInterior_white_img,
       },
     },
 
@@ -231,7 +226,6 @@ export const modelData: modelDataTypes = {
         heroImg: baseHero_red_img,
         paintImg: basePaint_red_img,
         wheelsImg: baseWheels_red_img,
-        interiorImg: baseInterior_white_img,
       },
     },
 
@@ -244,9 +238,14 @@ export const modelData: modelDataTypes = {
         heroImg: baseHero_red_wheel2_img,
         paintImg: basePaint_red_wheel2_img,
         wheelsImg: baseWheels_red_wheel2_img,
-        interiorImg: baseInterior_white_img,
       },
     },
+  ],
+
+  interiorImages: [
+    { interiorColor: "All Black", imgSrc: interiorImage_black },
+    { interiorColor: "Black and White", imgSrc: interiorImage_white },
+    { interiorColor: "Cream", imgSrc: interiorImage_cream },
   ],
 
   paint: [
