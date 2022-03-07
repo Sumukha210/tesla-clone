@@ -11,37 +11,22 @@ import {
   CarouselContainer,
   PlainImageContainer,
 } from "./styles";
+import useLoopedCarousel from "@/customHook/useLoopedCarousel";
 
 const Carousel = () => {
-  const [currentImgNum, setCurrentImgNum] = useState(0);
   const currentImages = useStore(s => s.currentImages);
   const modelData = useStore(s => s.modelData);
   const currentInterior = useStore(s => s.currentInterior);
-
   const currentInteriorImage = modelData?.interiorImages.find(
     item => item.interiorColor === currentInterior
   );
-
   const imageCollections =
     currentImages && currentInteriorImage
       ? [...Object.values(currentImages), currentInteriorImage.imgSrc]
       : [];
 
-  const handleNextArrow = () => {
-    if (currentImgNum >= imageCollections.length - 1) {
-      setCurrentImgNum(0);
-    } else {
-      setCurrentImgNum(currentImgNum + 1);
-    }
-  };
-
-  const handlePrevArrow = () => {
-    if (currentImgNum <= 0) {
-      setCurrentImgNum(imageCollections.length - 1);
-    } else {
-      setCurrentImgNum(currentImgNum - 1);
-    }
-  };
+  const { currentEleNum, handleNextArrow, handlePrevArrow } =
+    useLoopedCarousel(imageCollections);
 
   return (
     <Wrapper>
@@ -49,7 +34,7 @@ const Carousel = () => {
         <>
           <PlainImageContainer>
             <NextImg
-              src={imageCollections[currentImgNum]}
+              src={imageCollections[currentEleNum]}
               objectFit="cover"
               placeholder="blur"
             />
@@ -58,7 +43,7 @@ const Carousel = () => {
           <CarouselContainer>
             <ImageContainer>
               <NextImg
-                src={imageCollections[currentImgNum]}
+                src={imageCollections[currentEleNum]}
                 objectFit="cover"
               />
             </ImageContainer>
