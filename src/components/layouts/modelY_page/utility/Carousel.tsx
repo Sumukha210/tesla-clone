@@ -39,6 +39,7 @@ const Carousel = () => {
             <div className="dots">
               {info.map((i, index) => (
                 <div
+                  key={index}
                   className={`${currentEle === index && "active"}`}
                   onClick={() => setCurrentEle(index)}></div>
               ))}
