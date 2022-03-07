@@ -15,7 +15,19 @@ import {
 const Carousel = () => {
   const [currentImgNum, setCurrentImgNum] = useState(0);
   const currentImages = useStore(s => s.currentImages);
-  const imageCollections = currentImages ? Object.values(currentImages) : [];
+  const modelData = useStore(s => s.modelData);
+  const currentInterior = useStore(s => s.currentInterior);
+
+  const currentInteriorImage = modelData?.interiorImages.find(
+    item => item.interiorColor === currentInterior
+  );
+
+  const imageCollections = currentImages
+    ? [
+        ...Object.values(currentImages),
+        currentInteriorImage?.imgSrc && currentInteriorImage.imgSrc,
+      ]
+    : [];
 
   const handleNextArrow = () => {
     if (currentImgNum >= imageCollections.length - 1) {

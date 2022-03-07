@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "./header";
+import InteriorBlock from "./InteriorBlock";
 import ModelVersionBtnContainer from "./ModelVersionBtnContainer";
 import PaintBlock from "./PaintBlock";
 import SpecBlock from "./SpecBlock";
@@ -14,6 +15,7 @@ const RightBlock = () => {
       <ModelVersionBtnContainer />
       <PaintBlock />
       <WheelBlock />
+      <InteriorBlock />
     </RightSection>
   );
 };
