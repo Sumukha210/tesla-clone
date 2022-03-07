@@ -22,12 +22,10 @@ const Carousel = () => {
     item => item.interiorColor === currentInterior
   );
 
-  const imageCollections = currentImages
-    ? [
-        ...Object.values(currentImages),
-        currentInteriorImage?.imgSrc && currentInteriorImage.imgSrc,
-      ]
-    : [];
+  const imageCollections =
+    currentImages && currentInteriorImage
+      ? [...Object.values(currentImages), currentInteriorImage.imgSrc]
+      : [];
 
   const handleNextArrow = () => {
     if (currentImgNum >= imageCollections.length - 1) {
