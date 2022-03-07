@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   margin-top: 3rem;
 
   @media (min-width: 1200px) {
-    margin: 5rem 0;
+    margin: 10rem 0;
   }
 
   h2 {
@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
 `;
 
 export const PalletContainer = styled.div`
-  @media (max-width: 1199.98px) {
+  @media (min-width: 576px) and (max-width: 1199.98px) {
     padding-left: 3rem;
     padding-right: 3rem;
     max-width: 768px;

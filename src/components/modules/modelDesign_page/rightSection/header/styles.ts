@@ -11,7 +11,7 @@ export const HeaderWrapper = styled.div`
     }
   }
 
-  @media (max-width: 1199.98px) {
+  @media (min-width: 576px) and (max-width: 1199.98px) {
     padding-left: 3rem;
     padding-right: 3rem;
     max-width: 768px;
